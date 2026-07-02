@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>EVOLION</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: black;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+  <link href="assets/landing/mobile.css" rel="stylesheet">
+</head>
+<body>
+<header class="mobile-header" aria-label="Site header">
+  <div>
+    <div class="mobile-header-brand">E V O L I O N</div>
+    <div class="mobile-header-tagline">GENERATIONAL HEALTH</div>
+  </div>
+</header>
+
+<div class="mobile-page">
+  <section class="m-landing">
+    <img class="m-landing__bg" src="assets/landing/2-2.png" alt="">
+    <div class="m-landing__content">
+      <img class="m-landing__logo" src="assets/landing/3-2.png" alt="EVOLION">
+      <p class="m-landing__brand">E V O L I O N</p>
+      <div class="m-landing__tagline-row">
+        <span class="m-landing__tagline-line"></span>
+        <span class="m-landing__tagline">GENERATIONAL HEALTH</span>
+        <span class="m-landing__tagline-line"></span>
+      </div>
+      <h1 class="m-landing__title m-landing__title--white">OPTIMIZE TODAY.</h1>
+      <h1 class="m-landing__title m-landing__title--gold">THRIVE FOR YEARS.</h1>
+      <p class="m-landing__subtitle">LEAVE A LEGACY.</p>
+      <a href="home_screen.html" class="m-landing__cta">LEARN MORE</a>
+    </div>
+  </section>
+</div>
+
+<div class="page-viewport">
+<div data-layer="LANDING PAGE" class="LandingPage">
+  <div data-layer="Rectangle 59" class="Rectangle59" style="width: 1440px; height: 819px; left: 0px; top: 0px; position: absolute; background: black"></div>
+  <img data-layer="2 2" class="2" style="width: 1351px; height: 851px; left: 193px; top: 0px; position: absolute" src="assets/landing/2-2.png" alt="" />
+  <img data-layer="3 2" class="2" style="width: 200px; height: 269px; left: 243px; top: 50px; position: absolute" src="assets/landing/3-2.png" alt="EVOLION" />
+  <div data-layer="E V O L I O N" class="EVOLION" style="left: 158px; top: 282px; position: absolute; color: white; font-size: 64px; font-family: Poppins; font-weight: 500; word-wrap: break-word">E V O L I O N</div>
+  <div data-layer="OPTIMIZE TODAY." class="OptimizeToday" style="left: 144px; top: 407px; position: absolute; color: white; font-size: 80px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 1px 3px 4px rgba(0, 0, 0, 1.00)">OPTIMIZE TODAY.</div>
+  <div data-layer="THRIVE FOR YEARS." class="ThriveForYears" style="left: 114px; top: 479px; position: absolute; color: #C8A96A; font-size: 80px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 1px 3px 4px rgba(0, 0, 0, 1.00)">THRIVE FOR YEARS.</div>
+  <div data-layer="LEAVE A LEGACY." class="LeaveALegacy" style="left: 179px; top: 551px; position: absolute; color: white; font-size: 40px; font-family: Poppins; font-weight: 500; word-wrap: break-word; text-shadow: 1px 3px 4px rgba(0, 0, 0, 1.00)">LEAVE A LEGACY.</div>
+  <div data-layer="GENERATIONAL HEALTH" class="GenerationalHealth" style="left: 216px; top: 361px; position: absolute; color: #C8A96A; font-size: 20px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">GENERATIONAL HEALTH</div>
+  <div data-svg-wrapper data-layer="Rectangle 57" class="Rectangle57" style="left: 171px; top: 372px; position: absolute">
+    <svg width="32" height="2" viewBox="0 0 32 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="2" fill="#C8A96A"/>
+    </svg>
+  </div>
+  <div data-svg-wrapper data-layer="Rectangle 58" class="Rectangle58" style="left: 482px; top: 372px; position: absolute">
+    <svg width="32" height="2" viewBox="0 0 32 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="2" fill="#C8A96A"/>
+    </svg>
+  </div>
+  <a href="home_screen.html" style="text-decoration: none; display: block; position: absolute; left: 235px; top: 653px; width: 216px; height: 51px;">
+    <div data-layer="Rectangle 8" class="Rectangle8" style="width: 216px; height: 51px; left: 0px; top: 0px; position: absolute; background: #A9824B; border-radius: 3px"></div>
+    <div data-layer="LEARN MORE" class="LearnMore" style="left: 52px; top: 12px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 600; word-wrap: break-word">LEARN MORE</div>
+  </a>
+</div>
+</div>
+<script>
+(function () {
+  var DESIGN_WIDTH = 1440;
+  var DESIGN_HEIGHT = 819;
+
+  function updateViewportHeight() {
+    if (window.innerWidth <= 1024) return;
+    var viewport = document.querySelector('.page-viewport');
+    if (!viewport) return;
+    var scale = Math.min(1, window.innerWidth / DESIGN_WIDTH);
+    if (scale < 1) {
+      viewport.style.height = (DESIGN_HEIGHT * scale) + 'px';
+    } else {
+      viewport.style.height = '';
+    }
+  }
+
+  window.addEventListener('resize', updateViewportHeight);
+  window.addEventListener('orientationchange', updateViewportHeight);
+  updateViewportHeight();
+})();
+</script>
+</body>
+</html>
