@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>EVOLION - Home</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <style>
     /* ============================================================
        EVOLION HOME SCREEN — Consolidated Stylesheet
@@ -112,7 +111,10 @@
       cursor: pointer;
     }
 
-    .mobile-menu-btn .material-icons-outlined { font-size: 26px; }
+    .mobile-menu-btn .material-icons-outlined {
+      font-family: 'Material Icons Outlined';
+      font-size: 26px;
+    }
 
     .mobile-menu-overlay {
       display: none;
@@ -180,9 +182,6 @@
 
     @media (max-width: 1024px) {
       .mobile-header { display: flex; }
-      body.has-mobile-header .page-viewport {
-        margin-top: calc(60px + env(safe-area-inset-top, 0px));
-      }
     }
 
     @media (min-width: 1025px) {
@@ -240,6 +239,21 @@
     .feature-item { position: absolute; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .feature-item .material-icons-outlined { font-size: 36px; color: #C2914C; display: block; margin-bottom: 4px; }
     .feature-item .label { color: white; font-size: 12px; font-family: Poppins; font-weight: 500; line-height: 1.3; }
+
+    .material-icons-outlined {
+      font-family: 'Material Icons Outlined';
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: 'liga';
+    }
 
     /* --- Dividers --- */
     .divider-vertical { position: absolute; width: 2px; background: #B0B0B0; }
@@ -300,6 +314,8 @@
     }
     .scroll-link:hover { opacity: 0.75; }
   </style>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="assets/home/mobile.css" rel="stylesheet">
 </head>
 <body>
 <header class="mobile-header" aria-label="Site header">
@@ -320,6 +336,213 @@
   <button type="button" class="mobile-menu-link" data-scroll-target="contact">CONTACT</button>
   <button type="button" class="mobile-menu-cta" data-scroll-target="contact">GET EARLY ACCESS</button>
 </nav>
+
+<div class="mobile-page">
+  <section id="home" class="m-section m-hero">
+    <img class="m-hero__bg" src="assets/home/2-1.png" alt="">
+    <div class="m-hero__content">
+      <p class="m-tagline">— Generational Health —</p>
+      <h1 class="m-title m-title--white">OPTIMIZE TODAY.</h1>
+      <h1 class="m-title m-title--gold">THRIVE FOR YEARS.</h1>
+      <p class="m-subtitle">LEAVE A LEGACY.</p>
+      <p class="m-kicker">STOP SETTLING FOR NORMAL.</p>
+      <p class="m-body">EVOLION is a premium, provider-guided health optimization platform helping people improve hormones, performance, recovery, and longevity through the philosophy of Generational Health.</p>
+      <div class="m-actions">
+        <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact">GET EARLY ACCESS</button>
+        <button type="button" class="m-btn m-btn--outline scroll-link" data-scroll-target="how-it-works">SEE HOW IT WORKS</button>
+      </div>
+      <div class="m-features">
+        <div class="m-feature"><span class="material-icons-outlined">person</span><span class="m-feature__label">PROVIDER<br>GUIDE</span></div>
+        <div class="m-feature"><span class="material-icons-outlined">shield</span><span class="m-feature__label">EVIDENCE<br>BASED</span></div>
+        <div class="m-feature"><span class="material-icons-outlined">share</span><span class="m-feature__label">DATA<br>DRIVEN</span></div>
+        <div class="m-feature"><span class="material-icons-outlined">info</span><span class="m-feature__label">RESULT<br>YOU CAN MEASURE</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="m-banner m-banner--gold">So what does "optimized" actually look like for you? Keep scrolling — it starts with the systems that move the needle.</div>
+
+  <section class="m-section m-section--dark">
+    <div class="m-problem-list">
+      <div class="m-problem-item"><span class="material-icons-outlined">search</span>Getting Tired so quickly?</div>
+      <div class="m-problem-item"><span class="material-icons-outlined">search</span>Having Brain Fog?</div>
+      <div class="m-problem-item"><span class="material-icons-outlined">search</span>Stubborn weight gain?</div>
+      <div class="m-problem-item"><span class="material-icons-outlined">search</span>Not sure what fitness app to use?</div>
+    </div>
+    <p class="m-heading" style="color: var(--gold); margin-top: 24px;">Stop guessing what's wrong.</p>
+    <p class="m-body"><span class="m-highlight">Evolion</span> helps men and women 35+ uncover what may be holding them back through lab based, provider guided optimization.</p>
+  </section>
+
+  <section id="benefits" class="m-section m-section--light">
+    <p class="m-heading--sm">YOUR BLUEPRINT FOR A BETTER BODY.</p>
+    <h2 class="m-heading">WE OPTIMIZE EVERY SYSTEM THAT ACTUALLY MOVES THE NEEDLE.</h2>
+    <div class="m-cards">
+      <div class="m-card"><p class="m-card__title">HORMONES</p><p class="m-card__text">Rebalance testosterone, estrogen, and the hormones that quietly run your energy, strength, and drive. Feel like yourself again or better.</p></div>
+      <div class="m-card"><p class="m-card__title">ENERGY &amp; PERFORMANCE</p><p class="m-card__text">Trade afternoon crashes for all-day fuel. Sharper focus, stronger output, and the stamina to show up fully at work, in the gym, and at home.</p></div>
+      <div class="m-card"><p class="m-card__title">SLEEP &amp; RECOVERY</p><p class="m-card__text">Wake up genuinely restored. Deeper sleep, faster recovery, and the resilience to handle whatever your day throws at you.</p></div>
+      <div class="m-card"><p class="m-card__title">BODY COMPOSITION</p><p class="m-card__text">Build lean muscle, strip away stubborn fat, and reshape your body the safe, sustainable way with a plan that actually sticks.</p></div>
+      <div class="m-card"><p class="m-card__title">LONGEVITY</p><p class="m-card__text">Don't just live longer — live better, longer. Lower inflammation, protect your long-term health, and invest in the decades ahead.</p></div>
+      <div class="m-card"><p class="m-card__title">DATA &amp; INSIGHTS</p><p class="m-card__text">Stop guessing. Track your labs, biometrics, and real-time progress in one dashboard — so every decision is backed by your numbers.</p></div>
+    </div>
+  </section>
+
+  <div class="m-banner m-banner--gradient"><span class="m-highlight">Six systems.</span> One coordinated plan. Here's exactly what we do to optimize each one.</div>
+
+  <section class="m-section m-section--dark">
+    <img class="m-offer-img" src="assets/home/3-2.png" alt="Comprehensive care">
+    <p class="m-title m-title--gold" style="font-size: 48px;">WHAT WE OFFER</p>
+    <p class="m-title m-title--white" style="font-size: 48px;">COMPREHENSIVE CARE.</p>
+    <p class="m-title m-title--gold" style="font-size: 48px;">PERSONALIZED FOR YOU.</p>
+    <p class="m-body" style="margin-top: 16px;">Advanced science meets a protocol built for one person — you. The result: more energy, faster recovery, and a longer, stronger life.</p>
+    <div class="m-offer-list">
+      <div class="m-offer-item"><img src="assets/home/1a-2.png" alt=""><div><p class="m-offer-item__title">HORMONE OPTIMIZATION</p><p class="m-offer-item__text">Dial in the hormones that drive your energy, mood, muscle, metabolism, and libido — and feel the difference in weeks, not years.</p></div></div>
+      <div class="m-offer-item"><img src="assets/home/1b-2.png" alt=""><div><p class="m-offer-item__title">ADVANCED LAB TESTING</p><p class="m-offer-item__text">Deep blood panels and biomarker analysis that reveal what's really happening beneath the surface.</p></div></div>
+      <div class="m-offer-item"><img src="assets/home/1c-2.png" alt=""><div><p class="m-offer-item__title">PERSONALIZED PROTOCOLS</p><p class="m-offer-item__text">Data-driven plans engineered around your unique biology, goals, and lifestyle. No templates. No guesswork.</p></div></div>
+      <div class="m-offer-item"><img src="assets/home/1d-2.png" alt=""><div><p class="m-offer-item__title">PEPTIDES &amp; REGENERATIVE CARE</p><p class="m-offer-item__text">Cutting-edge peptides and therapies that accelerate healing, recovery, and cellular regeneration.</p></div></div>
+      <div class="m-offer-item"><img src="assets/home/1e-2.png" alt=""><div><p class="m-offer-item__title">PERFORMANCE OPTIMIZATION</p><p class="m-offer-item__text">Build real strength, endurance, and a leaner physique. Perform at the level you know you're capable of.</p></div></div>
+      <div class="m-offer-item"><img src="assets/home/1f-2.png" alt=""><div><p class="m-offer-item__title">COGNITIVE &amp; MENTAL WELLNESS</p><p class="m-offer-item__text">Sharper focus, clearer thinking, steadier mood. Protect the one asset you can't replace — your mind.</p></div></div>
+      <div class="m-offer-item"><img src="assets/home/1g-2.png" alt=""><div><p class="m-offer-item__title">RECOVERY &amp; LONGEVITY</p><p class="m-offer-item__text">Better sleep, lower inflammation, and healthy aging from the inside out.</p></div></div>
+      <div class="m-offer-item"><img src="assets/home/1h-2.png" alt=""><div><p class="m-offer-item__title">NUTRITION &amp; LIFESTYLE</p><p class="m-offer-item__text">Expert guidance on the food, supplements, and daily habits that turn short-term wins into lifelong results.</p></div></div>
+    </div>
+    <div class="m-actions" style="margin-top: 32px;">
+      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact">START TODAY</button>
+    </div>
+  </section>
+
+  <section class="m-section m-section--gold">
+    <p class="m-heading" style="color: white;">ROOTED IN SCIENCE. FOCUSED ON YOU.</p>
+    <div class="m-trust">
+      <div class="m-trust-item"><img src="assets/provider.png" alt=""><span>PROVIDER GUIDED CARE</span></div>
+      <div class="m-trust-item"><img src="assets/evidence.png" alt=""><span>EVIDENCE BASED PROTOCOLS</span></div>
+      <div class="m-trust-item"><img src="assets/prescription.png" alt=""><span>PRESCRIPTION BASED</span></div>
+      <div class="m-trust-item"><img src="assets/hippa.png" alt=""><span>HIPPA COMPLIANT</span></div>
+      <div class="m-trust-item"><img src="assets/secure.png" alt=""><span>SECURE &amp; PRIVATE</span></div>
+    </div>
+  </section>
+
+  <section id="plans" class="m-section m-section--dark">
+    <p class="m-tagline" style="color: var(--gold);">TAILORED OPTIMIZATION.</p>
+    <p class="m-title m-title--white" style="font-size: 52px;">MEMBERSHIPS</p>
+    <p class="m-title m-title--gold" style="font-size: 52px;">DESIGNED FOR YOU.</p>
+    <p class="m-body" style="margin-top: 16px;">One membership. A full team of experts, a custom protocol, and ongoing optimization — for less than most people spend on coffee and takeout each month.</p>
+
+    <div class="m-plan-card m-plan-card--male" style="margin-top: 32px;">
+      <img class="m-plan-card__img" src="assets/home/b-2.png" alt="">
+      <div class="m-plan-card__body">
+        <p class="m-plan-card__title">MALE WELLNESS OPTIMIZATION</p>
+        <p class="m-plan-card__desc">Reclaim your edge. Optimize testosterone, boost energy, build lean muscle, reignite your drive, and perform at the level you've been missing.</p>
+        <ul class="m-plan-card__list">
+          <li>Dedicated provider oversight</li>
+          <li>Prescription management</li>
+          <li>Ongoing lab monitoring &amp; analysis</li>
+          <li>A treatment plan built around your biology</li>
+          <li>Continuous support &amp; adjustments</li>
+          <li>Early access to the EVOLION app</li>
+          <li>Actual Health Coach</li>
+        </ul>
+      </div>
+      <div class="m-plan-card__footer">
+        <span class="m-plan-card__label">STARTER PLAN</span>
+        <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact" style="width: auto; padding: 10px 20px;">SIGN UP HERE</button>
+      </div>
+    </div>
+
+    <div class="m-plan-card m-plan-card--female">
+      <img class="m-plan-card__img" src="assets/home/g2-1.png" alt="">
+      <div class="m-plan-card__body">
+        <p class="m-plan-card__title">FEMALE WELLNESS OPTIMIZATION</p>
+        <p class="m-plan-card__desc">Feel like you again. Balance your hormones, lift your mood, restore your energy, support your metabolism, and elevate how you feel every single day.</p>
+        <ul class="m-plan-card__list">
+          <li>Dedicated provider oversight</li>
+          <li>Prescription management</li>
+          <li>Ongoing lab monitoring &amp; analysis</li>
+          <li>A treatment plan built around your biology</li>
+          <li>Continuous support &amp; adjustments</li>
+          <li>Early access to the EVOLION app</li>
+          <li>Actual Health Coach</li>
+        </ul>
+      </div>
+      <div class="m-plan-card__footer">
+        <span class="m-plan-card__label">STARTER PLAN</span>
+        <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact" style="width: auto; padding: 10px 20px;">SIGN UP HERE</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="m-banner m-section--gold" style="padding: 24px 20px;">Wondering how you actually get started? It's simpler than you think.</div>
+
+  <section id="how-it-works" class="m-section m-section--light">
+    <p class="m-heading--sm">A SIMPLE, PROVEN PROCESS.</p>
+    <h2 class="m-heading">FROM CURIOUS TO OPTIMIZED IN FIVE STEPS.</h2>
+    <p class="m-body" style="color: var(--dark); margin-top: 12px;">No endless waiting rooms. No one-size-fits-all advice. Just a clear path built around your biology.</p>
+    <div class="m-steps">
+      <div class="m-step"><img src="assets/apply.png" alt=""><p class="m-step__title">APPLY</p><p class="m-step__text">Fill us in on yourself — your energy, your goals, how you've been feeling. A few quick details help us tailor the right hormone plan for you.</p></div>
+      <div class="m-step"><img src="assets/labs.png" alt=""><p class="m-step__title">LABS</p><p class="m-step__text">We dig into your labs and key health markers to see exactly what's happening beneath the surface.</p></div>
+      <div class="m-step"><img src="assets/provider review.png" alt=""><p class="m-step__title">PROVIDER REVIEW</p><p class="m-step__text">A real provider reviews your results — no algorithms playing doctor — and maps out your strategy.</p></div>
+      <div class="m-step"><img src="assets/personalized plan.png" alt=""><p class="m-step__title">YOUR PERSONALIZED PLAN</p><p class="m-step__text">Get a custom protocol built around your body, your goals, and your life. Nothing generic. Nothing wasted.</p></div>
+      <div class="m-step"><img src="assets/track.png" alt=""><p class="m-step__title">TRACK &amp; OPTIMIZE</p><p class="m-step__text">We monitor your progress, fine-tune your plan, and keep raising your baseline because optimization never stops.</p></div>
+    </div>
+    <div class="m-actions" style="margin-top: 24px;">
+      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact">SIGN UP NOW</button>
+    </div>
+  </section>
+
+  <section class="m-section m-section--dark">
+    <p class="m-title m-title--gold" style="font-size: 48px;">ALL IN ONE APP.</p>
+    <p class="m-body" style="margin-top: 8px; font-weight: 600;">EVERYTHING YOU NEED LAUNCHING SOON.</p>
+    <div class="m-app-imgs">
+      <img src="assets/home/free-isometric-samsung-galaxy-s26-mockup-mockuuups-studio.png" alt="App mockup">
+      <img src="assets/home/10-1.png" alt="App preview">
+    </div>
+    <p class="m-body m-body--left" style="max-width: none;">The <span class="m-highlight">EVOLION</span> app is on the way and it'll be your health command center. Labs, prescriptions, dosages, workouts, nutrition, sleep, recovery, and bio-metrics, all tracked in one place.</p>
+    <ul class="m-checklist">
+      <li><span class="material-icons-outlined">check_circle</span>Track your labs, vitals, and progress in real time</li>
+      <li><span class="material-icons-outlined">check_circle</span>Manage prescriptions and dosages with zero guesswork</li>
+      <li><span class="material-icons-outlined">check_circle</span>Log workouts, nutrition, and daily steps</li>
+      <li><span class="material-icons-outlined">check_circle</span>Monitor sleep, HRV, and recovery night after night</li>
+      <li><span class="material-icons-outlined">check_circle</span>Stay connected with your care team — anytime</li>
+    </ul>
+    <p class="m-kicker">Launching soon. Be first in line.</p>
+    <div class="m-actions">
+      <button type="button" class="m-btn m-btn--outline scroll-link" data-scroll-target="contact">JOIN THE EARLY-ACCESS LIST →</button>
+    </div>
+  </section>
+
+  <div class="m-banner" style="background: #765B34; color: white; font-weight: 700;">The early access list is filling now.</div>
+
+  <section id="contact" class="m-cta-block m-section--dark">
+    <p class="m-title m-title--white">YOUR HEALTH IS</p>
+    <p class="m-title m-title--gold">YOUR GREATEST ASSET.</p>
+    <p class="m-body" style="margin: 16px auto 28px; font-weight: 600;">INVEST IN IT. OPTIMIZE IT. PROTECT IT.</p>
+    <div class="m-actions">
+      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact">CLAIM YOUR EARLY ACCESS →</button>
+    </div>
+    <p style="font-family: Montserrat; font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 12px;">2-minute application. Provider-guided from day one.</p>
+  </section>
+
+  <footer class="m-footer">
+    <img class="m-footer__logo" src="assets/home/screenshot-743-1.png" alt="EVOLION">
+    <p class="m-footer__brand">E V O L I O N</p>
+    <p class="m-footer__tagline">GENERATIONAL HEALTH</p>
+    <div class="m-footer__nav">
+      <button type="button" class="scroll-link" data-scroll-target="plans">MEMBERSHIPS</button>
+      <button type="button" class="scroll-link" data-scroll-target="benefits">PEPTIDES</button>
+      <button type="button" class="scroll-link" data-scroll-target="how-it-works">HOW IT WORKS</button>
+      <button type="button" class="scroll-link" data-scroll-target="home">ABOUT</button>
+      <button type="button" class="scroll-link" data-scroll-target="benefits">RESOURCES</button>
+      <button type="button" class="scroll-link" data-scroll-target="contact">CONTACT</button>
+    </div>
+    <img class="m-footer__social" src="assets/social media.png" alt="Social media">
+    <p style="font-family: Montserrat; font-size: 13px; font-weight: 300;">© 2026 EVOLION. All rights reserved.</p>
+    <div class="m-footer__legal">
+      <span>Privacy Policy</span>
+      <span>Terms of Service</span>
+      <span>Medical Disclaimer</span>
+      <span>HIPAA Notice</span>
+    </div>
+  </footer>
+</div>
+
 <!-- =====================================================================
      EVOLION — HOME SCREEN
      Sections: Header | Hero | Pillars | What We Offer | Memberships |
@@ -329,7 +552,7 @@
 <div class="MainPage" style="width:1440px;height:5643px;position:relative;background:black;overflow:hidden">
   <img data-layer="image 1" class="Image1" style="width: 792px; height: 597px; left: 0px; top: 810px; position: absolute" src="assets/home/image-1.png" />
   <img data-layer="2 1" class="1" style="width: 1242px; height: 782px; left: 218px; top: 27px; position: absolute" src="assets/home/2-1.png" />
-  <div id="home" class="section-anchor" style="top: 0px;"></div>
+  <div data-section="home" class="section-anchor" style="top: 0px;"></div>
   <!-- ====== SECTION 1: HEADER / NAVIGATION ====== -->
 <div data-layer="Rectangle 7" class="Rectangle7" style="width: 1440px; height: 83px; left: 0px; top: -8px; position: absolute; background: rgba(0, 0, 0, 0.80)"></div>
   <img data-layer="Screenshot (743) 1" class="Screenshot7431" style="width: 80px; height: 81px; left: 16px; top: 8px; position: absolute" src="assets/home/screenshot-743-1.png" />
@@ -367,7 +590,7 @@
     <span class="material-icons-outlined">info</span>
     <div class="label">RESULT<br>YOU CAN MEASURE</div>
   </div>
-  <div id="benefits" class="section-anchor" style="top: 1403px;"></div>
+  <div data-section="benefits" class="section-anchor" style="top: 1403px;"></div>
   <!-- ====== SECTION 2: HEALTH PILLARS — "We Optimize Every System" ====== -->
 <div data-layer="Rectangle 10" class="Rectangle10" style="width: 1440px; height: 347px; left: 0px; top: 1403px; position: absolute; background: #F4F4F2; box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25) inset"></div>
   <div data-layer="YOUR BLUEPRINT FOR A BETTER BODY." class="YourBlueprintForABetterBody" style="left: 533px; top: 1430px; position: absolute; text-align: center; color: #A9824B; font-size: 18px; font-family: Montserrat; font-weight: 700; word-wrap: break-word">YOUR BLUEPRINT FOR A BETTER BODY.</div>
@@ -680,7 +903,7 @@
   <div data-layer="Rectangle 8" class="Rectangle8" style="width: 216px; height: 51px; left: 1124px; top: 2734px; position: absolute; background: #A9824B; border-radius: 3px"></div>
   <div data-layer="START TODAY" class="StartToday" style="left: 1170px; top: 2746px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 600; word-wrap: break-word">START TODAY</div>
   <div data-layer="This is what your future protocol is built from. Early access members will be the first to unlock it and the first to lock in founding member status before launch." class="ThisIsWhatYourFutureProtocolIsBuiltFromEarlyAccessMembersWillBeTheFirstToUnlockItAndTheFirstToLockInFoundingMemberStatusBeforeLaunch" style="width: 1009px; height: 72px; left: 101px; top: 2729px; position: absolute; color: #2B2A28; font-size: 24px; font-family: Inter; font-weight: 500; word-wrap: break-word">This is what your future protocol is built from. Early access members will be the first to unlock it and the first to lock in founding member status before launch.</div>
-  <div id="plans" class="section-anchor" style="top: 3056px;"></div>
+  <div data-section="plans" class="section-anchor" style="top: 3056px;"></div>
   <!-- ====== SECTION 4: MEMBERSHIPS — "Tailored Optimization" ====== -->
 <div data-layer="Rectangle 40" class="Rectangle40" style="width: 1440px; height: 920px; left: 0px; top: 2971px; position: absolute; background: linear-gradient(182deg, #050505 36%, #6B6B6B 89%)"></div>
   <div data-layer="TAILORED OPTIMIZATION." class="TailoredOptimization" style="left: 102px; top: 3056px; position: absolute; color: #C8A96A; font-size: 20px; font-family: Inter; font-weight: 600; word-wrap: break-word">TAILORED OPTIMIZATION.</div>
@@ -790,7 +1013,7 @@
   <div data-layer="STARTER PLAN" class="StarterPlan" style="left: 758px; top: 3689px; position: absolute; color: #C8A96A; font-size: 48px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word">STARTER PLAN</div>
   <div data-layer="Rectangle 8" class="Rectangle8" style="width: 216px; height: 51px; left: 1101px; top: 3692px; position: absolute; background: #A9824B; border-radius: 3px"></div>
   <div data-layer="SIGN UP HERE" class="SignUpHere" style="left: 1156px; top: 3706px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">SIGN UP HERE</div>
-  <div id="how-it-works" class="section-anchor" style="top: 3889px;"></div>
+  <div data-section="how-it-works" class="section-anchor" style="top: 3889px;"></div>
   <!-- ====== SECTION 5: PROCESS — "A Simple, Proven Process" ====== -->
 <div data-layer="Rectangle 50" class="Rectangle50" style="width: 1440px; height: 493px; left: 0px; top: 3889px; position: absolute; background: #F4F4F2; box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25) inset"></div>
   <div data-layer="A SIMPLE, PROVEN PROCESS." class="ASimpleProvenProcess" style="width: 294px; left: 573px; top: 3916px; position: absolute; text-align: center; color: #A9824B; font-size: 18px; font-family: Montserrat; font-weight: 700; word-wrap: break-word">A SIMPLE, PROVEN PROCESS.</div>
@@ -839,7 +1062,7 @@
   </div>
   <div data-layer="Rectangle 8" class="Rectangle8" style="width: 279px; height: 51px; left: 872px; top: 4957px; position: absolute; border-radius: 3px; border: 2px #C8A96A solid"></div>
   <div data-layer="JOIN THE EARLY-ACCESS LIST →" class="JoinTheEarlyAccessList" style="left: 894px; top: 4971px; position: absolute; color: white; font-size: 15px; font-family: Poppins; font-weight: 600; word-wrap: break-word">JOIN THE EARLY-ACCESS LIST →</div>
-  <div id="contact" class="section-anchor" style="top: 5114px;"></div>
+  <div data-section="contact" class="section-anchor" style="top: 5114px;"></div>
   <!-- ====== SECTION 7: FINAL CTA — "Your Health Is Your Greatest Asset" ====== -->
 <div data-layer="Rectangle 55" class="Rectangle55" style="width: 1440px; height: 333px; left: 0px; top: 5114px; position: absolute; background: linear-gradient(180deg, #050505 0%, #6B6B6B 100%)"></div>
   <img data-layer="3 2" class="2" style="width: 205px; height: 275px; left: 152px; top: 5146px; position: absolute" src="assets/home/3-2-2.png" />
@@ -1087,14 +1310,25 @@
 
   function getHeaderOffset() {
     var mobileHeader = document.querySelector('.mobile-header');
-    if (window.innerWidth <= MOBILE_HEADER_BREAKPOINT && mobileHeader) {
+    if (isMobileLayout() && mobileHeader) {
       return mobileHeader.getBoundingClientRect().height + 8;
     }
     return 20;
   }
 
+  function isMobileLayout() {
+    return window.innerWidth <= MOBILE_HEADER_BREAKPOINT;
+  }
+
+  function getScrollTarget(id) {
+    if (isMobileLayout()) {
+      return document.querySelector('.mobile-page #' + id);
+    }
+    return document.querySelector('[data-section="' + id + '"]');
+  }
+
   function scrollToSection(id) {
-    var anchor = document.getElementById(id);
+    var anchor = getScrollTarget(id);
     if (!anchor) return;
     var y = anchor.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
     window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
@@ -1137,7 +1371,7 @@
   }
 
   function hideDesktopHeaderNav() {
-    var isMobile = window.innerWidth <= MOBILE_HEADER_BREAKPOINT;
+    var isMobile = isMobileLayout();
     var headerLayers = ['HOME', 'BENEFITS', 'HOW IT WORKS', 'PLANS', 'CONTACT', 'START TODAY', 'GENERATIONAL HEALTH', 'E V O L I O N'];
 
     headerLayers.forEach(function (layer) {
@@ -1162,6 +1396,7 @@
   }
 
   function updateViewportHeight() {
+    if (isMobileLayout()) return;
     var viewport = document.querySelector('.page-viewport');
     if (!viewport) return;
     var scale = getPageScale();
