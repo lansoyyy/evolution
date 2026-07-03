@@ -7,9 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+    html {
+      -webkit-text-size-adjust: 100%;
+      background: #000;
+    }
     body {
-      background: black;
+      background: #000;
       overflow-x: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
@@ -45,8 +48,9 @@
 </div>
 
 <div class="page-viewport">
+  <div class="landing-scale-wrap">
 <div data-layer="LANDING PAGE" class="LandingPage">
-  <div data-layer="Rectangle 59" class="Rectangle59" style="width: 1440px; height: 819px; left: 0px; top: 0px; position: absolute; background: black"></div>
+  <div data-layer="Rectangle 59" class="Rectangle59" style="width: 1544px; height: 851px; left: 0px; top: 0px; position: absolute; background: black"></div>
   <img data-layer="2 2" class="2" style="width: 1351px; height: 851px; left: 193px; top: 0px; position: absolute" src="assets/landing/2-2.png" alt="" />
   <img data-layer="3 2" class="2" style="width: 200px; height: 269px; left: 243px; top: 50px; position: absolute" src="assets/landing/3-2.png" alt="EVOLION" />
   <div data-layer="E V O L I O N" class="EVOLION" style="left: 158px; top: 282px; position: absolute; color: white; font-size: 64px; font-family: Poppins; font-weight: 500; word-wrap: break-word">E V O L I O N</div>
@@ -69,27 +73,47 @@
     <div data-layer="LEARN MORE" class="LearnMore" style="left: 52px; top: 12px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 600; word-wrap: break-word">LEARN MORE</div>
   </a>
 </div>
+  </div>
 </div>
 <script>
 (function () {
-  var DESIGN_WIDTH = 1440;
-  var DESIGN_HEIGHT = 819;
+  var DESIGN_WIDTH = 1544;
+  var DESIGN_HEIGHT = 851;
+  var DESKTOP_MIN = 1025;
 
-  function updateViewportHeight() {
-    if (window.innerWidth <= 1024) return;
-    var viewport = document.querySelector('.page-viewport');
-    if (!viewport) return;
-    var scale = Math.min(1, window.innerWidth / DESIGN_WIDTH);
-    if (scale < 1) {
-      viewport.style.height = (DESIGN_HEIGHT * scale) + 'px';
-    } else {
-      viewport.style.height = '';
-    }
+  function getViewportSize() {
+    var vv = window.visualViewport;
+    return {
+      width: vv ? vv.width : window.innerWidth,
+      height: vv ? vv.height : window.innerHeight
+    };
   }
 
-  window.addEventListener('resize', updateViewportHeight);
-  window.addEventListener('orientationchange', updateViewportHeight);
-  updateViewportHeight();
+  function updateViewportFit() {
+    var wrap = document.querySelector('.landing-scale-wrap');
+    if (!wrap) return;
+
+    var size = getViewportSize();
+    if (size.width < DESKTOP_MIN) {
+      wrap.style.transform = '';
+      return;
+    }
+
+    var scale = size.width / DESIGN_WIDTH;
+    var scaledHeight = DESIGN_HEIGHT * scale;
+    if (scaledHeight < size.height) {
+      scale = size.height / DESIGN_HEIGHT;
+    }
+
+    wrap.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
+  }
+
+  window.addEventListener('resize', updateViewportFit);
+  window.addEventListener('orientationchange', updateViewportFit);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateViewportFit);
+  }
+  updateViewportFit();
 })();
 </script>
 </body>

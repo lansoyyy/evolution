@@ -11,33 +11,42 @@
 }
 
 .page-viewport {
-  position: relative;
+  position: fixed;
+  inset: 0;
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.landing-scale-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1544px;
+  height: 851px;
+  transform-origin: center center;
 }
 
 .LandingPage {
-  width: 1440px;
-  height: 819px;
+  width: 1544px;
+  height: 851px;
   position: relative;
   background: black;
   overflow: hidden;
 }
 
-@media (max-width: 1439px) {
-  .page-viewport {
-    max-width: none;
+@media (min-width: 1025px) {
+  html,
+  body {
     width: 100%;
-    height: calc(819px * 100vw / 1440);
+    height: 100%;
+    background: #000;
+    overflow: hidden;
   }
 
-  .LandingPage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scale(calc(100vw / 1440));
-    transform-origin: top left;
+  .page-viewport {
+    display: block;
   }
 }
 
