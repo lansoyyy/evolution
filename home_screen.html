@@ -368,6 +368,79 @@
       }
     }
 
+    /* --- Full-width section seam (pain → benefits) --- */
+    .section-divider {
+      position: absolute;
+      left: 0;
+      width: 1440px;
+      height: 2px;
+      pointer-events: none;
+      z-index: 15;
+      background: #050505;
+    }
+    .section-divider--pain-benefits { top: 1403px; }
+
+    /* --- App phone 3D float --- */
+    .app-phone-float {
+      position: absolute;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .app-phone-float__img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transform-origin: center center;
+      animation: app-phone-orbit 9s ease-in-out infinite;
+      will-change: transform;
+    }
+    @keyframes app-phone-orbit {
+      0%, 100% {
+        transform: translateY(0) rotateY(-14deg) rotateX(6deg) rotateZ(-3deg);
+      }
+      25% {
+        transform: translateY(-16px) rotateY(10deg) rotateX(-4deg) rotateZ(2deg);
+      }
+      50% {
+        transform: translateY(-8px) rotateY(16deg) rotateX(5deg) rotateZ(-2deg);
+      }
+      75% {
+        transform: translateY(-20px) rotateY(-8deg) rotateX(-3deg) rotateZ(4deg);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .app-phone-float__img { animation: none; }
+    }
+
+    /* --- Footer social links --- */
+    .footer-social {
+      position: relative;
+      width: 180px;
+      height: 30px;
+    }
+    .footer-social__img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+    }
+    .footer-social__link {
+      position: absolute;
+      top: 0;
+      width: 33.333%;
+      height: 100%;
+      z-index: 1;
+    }
+    .footer-social__link--instagram { left: 0; }
+    .footer-social__link--facebook { left: 33.333%; }
+    .footer-social__link--youtube { left: 66.666%; }
+    .footer-social__link[href]:hover { opacity: 0.75; }
+    .footer-social__link--disabled {
+      pointer-events: none;
+      cursor: default;
+    }
+
     /* --- Intake form modals --- */
     .intake-modal {
       display: none;
@@ -631,7 +704,9 @@
     <p class="m-title m-title--gold" style="font-size: 48px;">ALL IN ONE APP.</p>
     <p class="m-body" style="margin-top: 8px; font-weight: 600;">EVERYTHING YOU NEED LAUNCHING SOON.</p>
     <div class="m-app-imgs">
-      <img src="assets/home/free-isometric-samsung-galaxy-s26-mockup-mockuuups-studio.png" alt="App mockup">
+      <div class="app-phone-float app-phone-float--mobile">
+        <img class="app-phone-float__img" src="assets/home/free-isometric-samsung-galaxy-s26-mockup-mockuuups-studio.png" alt="App mockup">
+      </div>
       <img src="assets/home/10-1.png" alt="App preview">
     </div>
     <p class="m-body m-body--left" style="max-width: none;">The <span class="m-highlight">EVOLION</span> app is on the way and it'll be your health command center. Labs, prescriptions, dosages, workouts, nutrition, sleep, recovery, and bio-metrics, all tracked in one place. When it launches, your entire optimization will live right in your pocket.</p>
@@ -687,7 +762,12 @@
       <button type="button" class="scroll-link" data-scroll-target="benefits">RESOURCES</button>
       <button type="button" class="scroll-link" data-scroll-target="contact">CONTACT</button>
     </div>
-    <img class="m-footer__social" src="assets/social media.png" alt="Social media">
+    <div class="footer-social m-footer__social">
+      <img class="footer-social__img" src="assets/social media.png" alt="">
+      <a class="footer-social__link footer-social__link--instagram" href="https://www.instagram.com/evolionhealth" target="_blank" rel="noopener noreferrer" aria-label="EVOLION on Instagram"></a>
+      <a class="footer-social__link footer-social__link--facebook" href="https://www.facebook.com/profile.php?id=61590432750309" target="_blank" rel="noopener noreferrer" aria-label="EVOLION on Facebook"></a>
+      <span class="footer-social__link footer-social__link--youtube footer-social__link--disabled" aria-label="YouTube coming soon" aria-disabled="true"></span>
+    </div>
     <p style="font-family: Montserrat; font-size: 13px; font-weight: 300;">© 2026 EVOLION. All rights reserved.</p>
     <div class="m-footer__legal">
       <span>Privacy Policy</span>
@@ -719,7 +799,7 @@
   <div data-layer="BENEFITS" class="Benefits" style="left: 524px; top: 28px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">BENEFITS</div>
   <div data-layer="HOW IT WORKS" class="HowItWorks" style="left: 663px; top: 28px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">HOW IT WORKS</div>
   <div data-layer="CUSTOM PLANS" class="CustomPlans" style="left: 865px; top: 28px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">CUSTOM PLANS</div>
-  <div data-layer="CONTACT" class="Contact" style="left: 992px; top: 27px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">CONTACT</div>
+  <div data-layer="CONTACT" class="Contact" style="left: 1082px; top: 28px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">CONTACT</div>
   <div data-layer="OPTIMIZE TODAY." class="OptimizeToday" style="left: 84px; top: 135px; position: absolute; color: white; font-size: 90px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 1px 3px 4px rgba(0, 0, 0, 1.00)">OPTIMIZE TODAY.</div>
   <div data-layer="THRIVE FOR YEARS." class="ThriveForYears" style="left: 188px; top: 216px; position: absolute; color: #C8A96A; font-size: 90px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 1px 3px 4px rgba(0, 0, 0, 1.00)">THRIVE FOR YEARS.</div>
   <div data-layer="LEAVE A LEGACY." class="LeaveALegacy" style="left: 364px; top: 297px; position: absolute; color: white; font-size: 40px; font-family: Poppins; font-weight: 500; word-wrap: break-word; text-shadow: 1px 3px 4px rgba(0, 0, 0, 1.00)">LEAVE A LEGACY.</div>
@@ -1161,7 +1241,12 @@
   <div data-layer="ABOUT" class="About" style="left: 913px; top: 5476px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">ABOUT</div>
   <div data-layer="RESOURCES" class="Resources" style="left: 1030px; top: 5475px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">RESOURCES</div>
   <div data-layer="CONTACT" class="Contact" style="left: 1188px; top: 5475px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">CONTACT</div>
-  <img data-layer="Social Media Icons" class="SocialMediaIcons" style="width: 180px; height: 30px; left: 632px; top: 5526px; position: absolute" src="assets/social media.png" alt="Social Media">
+  <div class="footer-social" style="left: 632px; top: 5526px; position: absolute;">
+    <img class="footer-social__img" data-layer="Social Media Icons" src="assets/social media.png" alt="">
+    <a class="footer-social__link footer-social__link--instagram" href="https://www.instagram.com/evolionhealth" target="_blank" rel="noopener noreferrer" aria-label="EVOLION on Instagram"></a>
+    <a class="footer-social__link footer-social__link--facebook" href="https://www.facebook.com/profile.php?id=61590432750309" target="_blank" rel="noopener noreferrer" aria-label="EVOLION on Facebook"></a>
+    <span class="footer-social__link footer-social__link--youtube footer-social__link--disabled" aria-label="YouTube coming soon" aria-disabled="true"></span>
+  </div>
   <div data-layer="© 2026 EVOLION. All rights reserved." class="2026EvolionAllRightsReserved" style="left: 577px; top: 5577px; position: absolute; color: white; font-size: 16px; font-family: Montserrat; font-weight: 300; word-wrap: break-word">© 2026 EVOLION. All rights reserved.</div>
   <div data-layer="Privacy Policy" class="PrivacyPolicy" style="left: 421px; top: 5607px; position: absolute; color: white; font-size: 16px; font-family: Montserrat; font-weight: 300; word-wrap: break-word">Privacy Policy</div>
   <div data-layer="Terms of Service" class="TermsOfService" style="left: 569px; top: 5607px; position: absolute; color: white; font-size: 16px; font-family: Montserrat; font-weight: 300; word-wrap: break-word">Terms of Service</div>
@@ -1264,7 +1349,9 @@
     </svg>
   </div>
   <img data-layer="10 1" class="1" style="width: 473px; height: 350px; left: 320px; top: 4467px; position: absolute; border-radius: 30px" src="assets/home/10-1.png" />
-  <img data-layer="Free Isometric Samsung Galaxy S26 Mockup (Mockuuups Studio)" class="FreeIsometricSamsungGalaxyS26MockupMockuuupsStudio" style="width: 321px; height: 319px; left: 90px; top: 4588px; position: absolute" src="assets/home/free-isometric-samsung-galaxy-s26-mockup-mockuuups-studio.png" />
+  <div class="app-phone-float" style="left: 90px; top: 4588px; width: 321px; height: 319px;">
+    <img data-layer="Free Isometric Samsung Galaxy S26 Mockup (Mockuuups Studio)" class="FreeIsometricSamsungGalaxyS26MockupMockuuupsStudio app-phone-float__img" src="assets/home/free-isometric-samsung-galaxy-s26-mockup-mockuuups-studio.png" alt="EVOLION app on phone">
+  </div>
   <div data-svg-wrapper data-layer="Rectangle 64" class="Rectangle64" style="left: 740px; top: 4503px; position: absolute">
     <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="20" height="15" fill="#121212"/>
@@ -1297,7 +1384,7 @@
     </svg>
   </div>
   <div data-layer="Rectangle 66" class="Rectangle66" style="width: 1440px; height: 595px; left: 0px; top: 809px; position: absolute; background: #050505"></div>
-  <img data-layer="ChatGPT Image Jun 30, 2026, 07_26_38 PM 1" class="ChatgptImageJun302026072638Pm1" style="width: 1641px; height: 595px; left: -398px; top: 810px; position: absolute" src="assets/home/chatgpt-image-jun-30-2026-07-26-38-pm-1.png" />
+  <img data-layer="ChatGPT Image Jun 30, 2026, 07_26_38 PM 1" class="ChatgptImageJun302026072638Pm1" style="width: 1842px; height: 595px; left: -398px; top: 810px; position: absolute" src="assets/home/chatgpt-image-jun-30-2026-07-26-38-pm-1.png" />
   <img data-layer="image 2" class="Image2" style="width: 786.31px; height: 593px; left: -35px; top: 811px; position: absolute" src="assets/home/new.png" />
   <div data-svg-wrapper data-layer="Rectangle 67" class="Rectangle67" style="left: 624px; top: 809px; position: absolute">
     <svg width="816" height="595" viewBox="0 0 816 595" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1324,6 +1411,7 @@
   <span class="material-icons-outlined search-icon" style="left: 843px; top: 1179px; position: absolute; font-size: 24px; color: #080705;">search</span>
   <div data-layer="Stop asking the internet generic questions and expecting personalized results." class="StopAskingTheInternetGenericQuestionsAndExpectingPersonalizedResults" style="width: 814px; left: 667px; top: 1249px; position: absolute; text-align: center; color: #C8A96A; font-size: 20px; font-family: Montserrat; font-weight: 700; word-wrap: break-word">Stop asking the internet generic questions <br/>and expecting personalized results.</div>
   <div data-layer="Evolion helps men and women 35-70 uncover what may be holding back energy, weight loss, sleep, hormones, recovery, and performance through lab-based, provider-guided optimization." class="EvolionHelpsMenAndWomen3570UncoverWhatMayBeHoldingBackEnergyWeightLossSleepHormonesRecoveryAndPerformanceThroughLabBasedProviderGuidedOptimization" style="width: 507px; left: 823px; top: 1315px; position: absolute; text-align: center"><span style="color: #C8A96A; font-size: 14px; font-family: Montserrat; font-weight: 700; word-wrap: break-word">Evolion</span><span style="color: #F4F4F2; font-size: 14px; font-family: Montserrat; font-weight: 500; word-wrap: break-word"> helps men and women 35-70 uncover what may be <br/>holding back energy, weight loss, sleep, hormones, recovery, <br/>and performance through lab-based, provider-guided optimization.</span></div>
+  <div class="section-divider section-divider--pain-benefits" aria-hidden="true"></div>
   <img data-layer="Prescription Icon" class="PrescriptionIcon" style="width: 39px; height: 50px; left: 698px; top: 2915px; position: absolute" src="assets/prescription.png" alt="Prescription Based">
 </div>
 </div>
