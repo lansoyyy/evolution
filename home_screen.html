@@ -313,6 +313,92 @@
       transition: opacity 0.2s ease;
     }
     .scroll-link:hover { opacity: 0.75; }
+
+    /* --- Intake form modals --- */
+    .intake-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 20000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      padding-top: calc(16px + env(safe-area-inset-top, 0px));
+    }
+
+    .intake-modal.is-open { display: flex; }
+
+    .intake-modal__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    .intake-modal__panel {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      width: min(720px, 100%);
+      max-height: calc(100vh - 32px);
+      max-height: calc(100dvh - 32px);
+      overflow: hidden;
+      background: var(--bg-light);
+      border-radius: 8px;
+      padding: 24px 20px 32px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+    }
+
+    .intake-modal__body {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .intake-modal__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .intake-modal__title {
+      font-family: Poppins, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .intake-modal__close {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(169, 130, 75, 0.5);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--dark);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .intake-trigger { cursor: pointer; }
+
+    .intake-modal__iframe {
+      display: block;
+      width: 100%;
+      height: 2400px;
+      border: none;
+      border-radius: 4px;
+      background: white;
+    }
+
+    .intake-modal__iframe[hidden],
+    .intake-modal__powr[hidden] {
+      display: none !important;
+    }
   </style>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link href="assets/home/mobile.css" rel="stylesheet">
@@ -443,7 +529,7 @@
       </div>
       <div class="m-plan-card__footer">
         <span class="m-plan-card__label">STARTER PLAN</span>
-        <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact" style="width: auto; padding: 10px 20px;">SIGN UP HERE</button>
+        <button type="button" class="m-btn m-btn--gold intake-trigger" data-intake-form="male" style="width: auto; padding: 10px 20px;">SIGN UP HERE</button>
       </div>
     </div>
 
@@ -464,7 +550,7 @@
       </div>
       <div class="m-plan-card__footer">
         <span class="m-plan-card__label">STARTER PLAN</span>
-        <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact" style="width: auto; padding: 10px 20px;">SIGN UP HERE</button>
+        <button type="button" class="m-btn m-btn--gold intake-trigger" data-intake-form="female" style="width: auto; padding: 10px 20px;">SIGN UP HERE</button>
       </div>
     </div>
   </section>
@@ -960,8 +1046,8 @@
   </div>
   <div data-layer="Rectangle 45" class="Rectangle45" style="width: 226px; height: 2px; left: 127px; top: 3329px; position: absolute; background: #C8A96A"></div>
   <div data-layer="STARTER PLAN" class="StarterPlan" style="left: 126px; top: 3689px; position: absolute; color: #C8A96A; font-size: 48px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word">STARTER PLAN</div>
-  <div data-layer="Rectangle 8" class="Rectangle8" style="width: 216px; height: 51px; left: 469px; top: 3692px; position: absolute; background: #A9824B; border-radius: 3px"></div>
-  <div data-layer="SIGN UP HERE" class="SignUpHere" style="left: 524px; top: 3706px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">SIGN UP HERE</div>
+  <div data-layer="Rectangle 8" class="Rectangle8 intake-trigger" data-intake-form="male" style="width: 216px; height: 51px; left: 469px; top: 3692px; position: absolute; background: #A9824B; border-radius: 3px"></div>
+  <div data-layer="SIGN UP HERE" class="SignUpHere intake-trigger" data-intake-form="male" style="left: 524px; top: 3706px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">SIGN UP HERE</div>
   <div data-layer="Rectangle 42" class="Rectangle42" style="width: 605px; height: 514px; left: 733px; top: 3241px; position: absolute; background: linear-gradient(139deg, #221924 0%, #82608A 100%); border-radius: 10px"></div>
   <div data-layer="Feel like you again. Balance your hormones, lift your mood, restore your energy, support your metabolism, and elevate how you feel every single day." class="FeelLikeYouAgainBalanceYourHormonesLiftYourMoodRestoreYourEnergySupportYourMetabolismAndElevateHowYouFeelEverySingleDay" style="width: 310px; height: 105px; left: 758px; top: 3336px; position: absolute; color: white; font-size: 16px; font-family: Montserrat; font-weight: 400; word-wrap: break-word">Feel like you again. Balance your hormones, lift your mood, restore your energy, support your<br/>metabolism, and elevate how you feel every single day.</div>
   <img data-layer="G2 1" class="G21" style="width: 239px; height: 535px; left: 1099px; top: 3220px; position: absolute;" src="assets/home/g2-1.png" />
@@ -1011,8 +1097,8 @@
   </div>
   <div data-layer="Rectangle 48" class="Rectangle48" style="width: 226px; height: 2px; left: 759px; top: 3329px; position: absolute; background: #C8A96A"></div>
   <div data-layer="STARTER PLAN" class="StarterPlan" style="left: 758px; top: 3689px; position: absolute; color: #C8A96A; font-size: 48px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word">STARTER PLAN</div>
-  <div data-layer="Rectangle 8" class="Rectangle8" style="width: 216px; height: 51px; left: 1101px; top: 3692px; position: absolute; background: #A9824B; border-radius: 3px"></div>
-  <div data-layer="SIGN UP HERE" class="SignUpHere" style="left: 1156px; top: 3706px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">SIGN UP HERE</div>
+  <div data-layer="Rectangle 8" class="Rectangle8 intake-trigger" data-intake-form="female" style="width: 216px; height: 51px; left: 1101px; top: 3692px; position: absolute; background: #A9824B; border-radius: 3px"></div>
+  <div data-layer="SIGN UP HERE" class="SignUpHere intake-trigger" data-intake-form="female" style="left: 1156px; top: 3706px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">SIGN UP HERE</div>
   <div data-section="how-it-works" class="section-anchor" style="top: 3889px;"></div>
   <!-- ====== SECTION 5: PROCESS — "A Simple, Proven Process" ====== -->
 <div data-layer="Rectangle 50" class="Rectangle50" style="width: 1440px; height: 493px; left: 0px; top: 3889px; position: absolute; background: #F4F4F2; box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25) inset"></div>
@@ -1266,12 +1352,60 @@
   <img data-layer="Prescription Icon" class="PrescriptionIcon" style="width: 39px; height: 50px; left: 698px; top: 2915px; position: absolute" src="assets/prescription.png" alt="Prescription Based">
 </div>
 </div>
+
+<div class="intake-modal" id="intake-modal-male" hidden aria-hidden="true" role="dialog" aria-labelledby="intake-modal-male-title">
+  <div class="intake-modal__overlay" data-close-intake></div>
+  <div class="intake-modal__panel">
+    <div class="intake-modal__header">
+      <h2 class="intake-modal__title" id="intake-modal-male-title">Male Intake Form</h2>
+      <button type="button" class="intake-modal__close" data-close-intake aria-label="Close">&times;</button>
+    </div>
+    <div class="intake-modal__body">
+      <div class="powr-form-builder intake-modal__powr" id="8f181822_1783006974"></div>
+      <iframe class="intake-modal__iframe" title="Male Intake Form" hidden></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="intake-modal" id="intake-modal-female" hidden aria-hidden="true" role="dialog" aria-labelledby="intake-modal-female-title">
+  <div class="intake-modal__overlay" data-close-intake></div>
+  <div class="intake-modal__panel">
+    <div class="intake-modal__header">
+      <h2 class="intake-modal__title" id="intake-modal-female-title">Female Intake Form</h2>
+      <button type="button" class="intake-modal__close" data-close-intake aria-label="Close">&times;</button>
+    </div>
+    <div class="intake-modal__body">
+      <div class="powr-form-builder intake-modal__powr" id="8a110f9c_1782329579"></div>
+      <iframe class="intake-modal__iframe" title="Female Intake Form" hidden></iframe>
+    </div>
+  </div>
+</div>
+
 <script>
 (function () {
   var DESIGN_WIDTH = 1440;
   var DESIGN_HEIGHT = 5643;
   var MOBILE_HEADER_BREAKPOINT = 1024;
   var HEADER_NAV_TOP_MAX = 60;
+
+  var INTake_FORM_URLS = {
+    male: 'https://www.powr.io/form-builder/u/8f181822_1783006974',
+    female: 'https://www.powr.io/form-builder/u/8a110f9c_1782329579'
+  };
+
+  var isLocalFile = window.location.protocol === 'file:';
+
+  function loadPowrScript() {
+    if (document.getElementById('powr-js')) return;
+    var script = document.createElement('script');
+    script.id = 'powr-js';
+    script.src = 'https://www.powr.io/powr.js?platform=bigcommerce';
+    document.body.appendChild(script);
+  }
+
+  if (!isLocalFile) {
+    loadPowrScript();
+  }
 
   var layerTargets = {
     'HOME': 'home',
@@ -1284,7 +1418,6 @@
     'START TODAY': 'contact',
     'CLAIM YOUR EARLY ACCESS →': 'contact',
     'JOIN THE EARLY-ACCESS LIST →': 'contact',
-    'SIGN UP HERE': 'contact',
     'SIGN UP NOW': 'contact',
     'MEMBERSHIPS': 'plans',
     'PEPTIDES': 'benefits',
@@ -1298,7 +1431,6 @@
     { cls: 'Rectangle8', top: 529, left: 100, target: 'contact' },
     { cls: 'Rectangle9', top: 529, target: 'how-it-works' },
     { cls: 'Rectangle8', top: 2734, target: 'contact' },
-    { cls: 'Rectangle8', top: 3692, target: 'contact' },
     { cls: 'Rectangle8', top: 4280, target: 'contact' },
     { cls: 'Rectangle8', top: 4957, target: 'contact' },
     { cls: 'Rectangle8', top: 5335, target: 'contact' }
@@ -1437,6 +1569,71 @@
     bindScrollLink(el, 'home');
   });
 
+  function closeIntakeModal() {
+    document.querySelectorAll('.intake-modal.is-open').forEach(function (modal) {
+      modal.classList.remove('is-open');
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+    });
+    if (!document.getElementById('mobile-menu') || !document.getElementById('mobile-menu').classList.contains('is-open')) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  function openIntakeModal(type) {
+    var url = INTake_FORM_URLS[type];
+    if (!url) return;
+
+    closeMobileMenu();
+
+    var modal = document.getElementById('intake-modal-' + type);
+    if (!modal) return;
+
+    var powrEl = modal.querySelector('.intake-modal__powr');
+    var iframe = modal.querySelector('.intake-modal__iframe');
+
+    if (isLocalFile) {
+      /* file:// breaks POWR postMessage — use a tall iframe; scroll inside the modal */
+      if (powrEl) powrEl.hidden = true;
+      if (iframe) {
+        iframe.hidden = false;
+        if (!iframe.src) iframe.src = url;
+      }
+    } else {
+      if (iframe) iframe.hidden = true;
+      if (powrEl) powrEl.hidden = false;
+      loadPowrScript();
+      if (window.POWR && typeof window.POWR.loadApps === 'function') {
+        window.POWR.loadApps();
+      }
+    }
+
+    closeIntakeModal();
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function bindIntakeTriggers() {
+    document.querySelectorAll('[data-intake-form]').forEach(function (el) {
+      if (el.dataset.intakeBound === 'true') return;
+      el.dataset.intakeBound = 'true';
+      el.classList.add('intake-trigger');
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openIntakeModal(el.getAttribute('data-intake-form'));
+      });
+    });
+  }
+
+  bindIntakeTriggers();
+
+  document.querySelectorAll('[data-close-intake]').forEach(function (el) {
+    el.addEventListener('click', closeIntakeModal);
+  });
+
   document.querySelectorAll('[data-scroll-target]').forEach(function (el) {
     var target = el.getAttribute('data-scroll-target');
     if (!target) return;
@@ -1454,7 +1651,10 @@
   if (menuOverlay) menuOverlay.addEventListener('click', closeMobileMenu);
 
   window.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMobileMenu();
+    if (e.key === 'Escape') {
+      closeIntakeModal();
+      closeMobileMenu();
+    }
   });
 
   function onResize() {
