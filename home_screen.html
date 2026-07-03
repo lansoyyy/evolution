@@ -314,6 +314,60 @@
     }
     .scroll-link:hover { opacity: 0.75; }
 
+    /* --- Launch ticker marquee (desktop) --- */
+    .launch-marquee {
+      position: absolute;
+      left: 0;
+      top: 5051px;
+      width: 1440px;
+      height: 63px;
+      background: #765B34;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .launch-marquee__track {
+      display: flex;
+      width: max-content;
+      animation: launch-marquee-scroll 26s linear infinite;
+    }
+    .launch-marquee__segment {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding-right: 56px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      height: 63px;
+    }
+    .launch-marquee__text {
+      color: white;
+      font-size: 24px;
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .launch-marquee__text--emphasis {
+      font-weight: 500;
+    }
+    .launch-marquee__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #C8A96A;
+      flex-shrink: 0;
+    }
+    @keyframes launch-marquee-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .launch-marquee__track {
+        animation: none;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
     /* --- Intake form modals --- */
     .intake-modal {
       display: none;
@@ -420,7 +474,7 @@
   <button type="button" class="mobile-menu-link" data-scroll-target="how-it-works">HOW IT WORKS</button>
   <button type="button" class="mobile-menu-link" data-scroll-target="plans">CUSTOM PLANS</button>
   <button type="button" class="mobile-menu-link" data-scroll-target="contact">CONTACT</button>
-  <button type="button" class="mobile-menu-cta" data-scroll-target="contact">GET EARLY ACCESS</button>
+  <button type="button" class="mobile-menu-cta" data-scroll-target="plans">GET EARLY ACCESS</button>
 </nav>
 
 <div class="mobile-page">
@@ -434,7 +488,7 @@
       <p class="m-kicker">STOP SETTLING FOR NORMAL.</p>
       <p class="m-body">EVOLION is a premium, provider-guided health optimization platform helping people improve hormones, performance, recovery, and longevity through the philosophy of Generational Health.</p>
       <div class="m-actions">
-        <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact">GET EARLY ACCESS</button>
+        <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="plans">GET EARLY ACCESS</button>
         <button type="button" class="m-btn m-btn--outline scroll-link" data-scroll-target="how-it-works">SEE HOW IT WORKS</button>
       </div>
       <div class="m-features">
@@ -491,7 +545,7 @@
       <div class="m-offer-item"><img src="assets/home/1h-2.png" alt=""><div><p class="m-offer-item__title">NUTRITION &amp; LIFESTYLE</p><p class="m-offer-item__text">Expert guidance on the food, supplements, and daily habits that turn short-term wins into lifelong results.</p></div></div>
     </div>
     <div class="m-actions" style="margin-top: 32px;">
-      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact">START TODAY</button>
+      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="plans">START TODAY</button>
     </div>
   </section>
 
@@ -569,7 +623,7 @@
       <div class="m-step"><img src="assets/track.png" alt=""><p class="m-step__title">TRACK &amp; OPTIMIZE</p><p class="m-step__text">We monitor your progress, fine-tune your plan, and keep raising your baseline because optimization is the key to lifelong health.</p></div>
     </div>
     <div class="m-actions" style="margin-top: 24px;">
-      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact">SIGN UP NOW</button>
+      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="plans">SIGN UP NOW</button>
     </div>
   </section>
 
@@ -590,18 +644,33 @@
     </ul>
     <p class="m-kicker">Launching soon. Be first in line.</p>
     <div class="m-actions">
-      <button type="button" class="m-btn m-btn--outline scroll-link" data-scroll-target="contact">JOIN THE EARLY-ACCESS LIST →</button>
+      <button type="button" class="m-btn m-btn--outline scroll-link" data-scroll-target="plans">JOIN THE EARLY-ACCESS LIST →</button>
     </div>
   </section>
 
-  <div class="m-banner" style="background: #765B34; color: white; font-weight: 700;">The early access list is filling now.</div>
+  <div class="m-banner m-banner--launch-marquee" aria-label="Launch announcement">
+    <div class="launch-marquee__track">
+      <span class="launch-marquee__segment">
+        <span class="launch-marquee__text launch-marquee__text--emphasis">The platform launches soon</span>
+        <span class="launch-marquee__dot" aria-hidden="true"></span>
+        <span class="launch-marquee__text">The early access list is filling now.</span>
+        <span class="launch-marquee__dot" aria-hidden="true"></span>
+      </span>
+      <span class="launch-marquee__segment" aria-hidden="true">
+        <span class="launch-marquee__text launch-marquee__text--emphasis">The platform launches soon</span>
+        <span class="launch-marquee__dot" aria-hidden="true"></span>
+        <span class="launch-marquee__text">The early access list is filling now.</span>
+        <span class="launch-marquee__dot" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
 
   <section id="contact" class="m-cta-block m-section--dark">
     <p class="m-title m-title--white">YOUR HEALTH IS</p>
     <p class="m-title m-title--gold">YOUR GREATEST ASSET.</p>
     <p class="m-body" style="margin: 16px auto 28px; font-weight: 600;">INVEST IN IT. OPTIMIZE IT. PROTECT IT.</p>
     <div class="m-actions">
-      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="contact">CLAIM YOUR EARLY ACCESS →</button>
+      <button type="button" class="m-btn m-btn--gold scroll-link" data-scroll-target="plans">CLAIM YOUR EARLY ACCESS →</button>
     </div>
     <p style="font-family: Montserrat; font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 12px;">2-minute application. Provider-guided from day one.</p>
   </section>
@@ -1108,28 +1177,21 @@
 <div data-layer="Rectangle 56" class="Rectangle56" style="width: 1440px; height: 78px; left: 0px; top: 1751px; position: absolute; background: linear-gradient(180deg, rgba(244, 244, 242, 0.50) 0%, rgba(5, 5, 5, 0.50) 95%)"></div>
   <div data-layer="Six Systems. One Coordinated Plan Bock." class="SixSystemsOneCoordinatedPlanBock" style="width: 863px; left: 289px; top: 1778px; position: absolute; text-align: center"><span style="color: #C8A96A; font-size: 18px; font-family: Montserrat; font-weight: 700; word-wrap: break-word">Six</span><span style="color: white; font-size: 18px; font-family: Montserrat; font-weight: 700; word-wrap: break-word"> </span><span style="color: #C8A96A; font-size: 18px; font-family: Montserrat; font-weight: 700; word-wrap: break-word">Systems.</span><span style="color: white; font-size: 18px; font-family: Montserrat; font-weight: 600; word-wrap: break-word"> One Coordinated Plan Bock. </span></div>
   <!-- ====== LAUNCH BANNER ====== -->
-<div data-layer="Rectangle 54" class="Rectangle54" style="width: 1440px; height: 63px; left: 0px; top: 5051px; position: absolute; background: #765B34"></div>
-  <div data-layer="The platform launches soon" class="ThePlatformLaunchesSoon" style="width: 321px; height: 32px; left: 336px; top: 5067px; position: absolute; color: white; font-size: 24px; font-family: Inter; font-weight: 500; word-wrap: break-word">The platform launches soon</div>
-  <div data-layer="The early access list is filling now." class="TheEarlyAccessListIsFillingNow" style="width: 401px; height: 32px; left: 699px; top: 5067px; position: absolute; color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">The early access list is filling now.</div>
-  <div data-svg-wrapper data-layer="Ellipse 10" class="Ellipse10" style="left: 677px; top: 5070px; position: absolute">
-    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="3.5" cy="3.5" r="3.5" fill="#C8A96A"/>
-    </svg>
-  </div>
-  <div data-svg-wrapper data-layer="Ellipse 11" class="Ellipse11" style="left: 309px; top: 5070px; position: absolute">
-    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="3.5" cy="3.5" r="3.5" fill="#C8A96A"/>
-    </svg>
-  </div>
-  <div data-svg-wrapper data-layer="Ellipse 12" class="Ellipse12" style="left: 1102px; top: 5070px; position: absolute">
-    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="3.5" cy="3.5" r="3.5" fill="#C8A96A"/>
-    </svg>
-  </div>
-  <div data-layer="Ellipse 12" class="Ellipse12" style="left: 1102px; top: 5070px; position: absolute">
-    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="3.5" cy="3.5" r="3.5" fill="#C8A96A"/>
-    </svg>
+  <div class="launch-marquee" aria-label="Launch announcement">
+    <div class="launch-marquee__track">
+      <span class="launch-marquee__segment">
+        <span class="launch-marquee__text launch-marquee__text--emphasis">The platform launches soon</span>
+        <span class="launch-marquee__dot" aria-hidden="true"></span>
+        <span class="launch-marquee__text">The early access list is filling now.</span>
+        <span class="launch-marquee__dot" aria-hidden="true"></span>
+      </span>
+      <span class="launch-marquee__segment" aria-hidden="true">
+        <span class="launch-marquee__text launch-marquee__text--emphasis">The platform launches soon</span>
+        <span class="launch-marquee__dot" aria-hidden="true"></span>
+        <span class="launch-marquee__text">The early access list is filling now.</span>
+        <span class="launch-marquee__dot" aria-hidden="true"></span>
+      </span>
+    </div>
   </div>
   <!-- ====== SCIENCE & TRUST BAR ====== -->
 <div data-layer="Rectangle 62" class="Rectangle62" style="width: 1440px; height: 197px; left: 0px; top: 2817px; position: absolute; background: linear-gradient(184deg, #A9824B 0%, #43341E 100%); box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25) inset"></div>
@@ -1326,12 +1388,12 @@
     'HOW IT WORKS': 'how-it-works',
     'CUSTOM PLANS': 'plans',
     'CONTACT': 'contact',
-    'GET EARLY ACCESS': 'contact',
+    'GET EARLY ACCESS': 'plans',
     'SEE HOW IT WORKS': 'how-it-works',
-    'START TODAY': 'contact',
-    'CLAIM YOUR EARLY ACCESS →': 'contact',
-    'JOIN THE EARLY-ACCESS LIST →': 'contact',
-    'SIGN UP NOW': 'contact',
+    'START TODAY': 'plans',
+    'CLAIM YOUR EARLY ACCESS →': 'plans',
+    'JOIN THE EARLY-ACCESS LIST →': 'plans',
+    'SIGN UP NOW': 'plans',
     'MEMBERSHIPS': 'plans',
     'PEPTIDES': 'benefits',
     'ABOUT': 'home',
@@ -1340,13 +1402,13 @@
   };
 
   var buttonRects = [
-    { cls: 'Rectangle6', top: 19, target: 'contact' },
-    { cls: 'Rectangle8', top: 529, left: 100, target: 'contact' },
+    { cls: 'Rectangle6', top: 19, target: 'plans' },
+    { cls: 'Rectangle8', top: 529, left: 100, target: 'plans' },
     { cls: 'Rectangle9', top: 529, target: 'how-it-works' },
-    { cls: 'Rectangle8', top: 2734, target: 'contact' },
-    { cls: 'Rectangle8', top: 4280, target: 'contact' },
-    { cls: 'Rectangle8', top: 4957, target: 'contact' },
-    { cls: 'Rectangle8', top: 5335, target: 'contact' }
+    { cls: 'Rectangle8', top: 2734, target: 'plans' },
+    { cls: 'Rectangle8', top: 4280, target: 'plans' },
+    { cls: 'Rectangle8', top: 4957, target: 'plans' },
+    { cls: 'Rectangle8', top: 5335, target: 'plans' }
   ];
 
   function getPageScale() {
