@@ -441,6 +441,26 @@
       cursor: default;
     }
 
+    /* --- Membership plan card photos --- */
+    .plan-card-photo {
+      position: absolute;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .plan-card-photo--male {
+      width: 258px;
+      height: 440px;
+      left: 448px;
+      top: 3241px;
+    }
+    .plan-card-photo--female {
+      width: 239px;
+      height: 440px;
+      left: 1099px;
+      top: 3241px;
+      transform: scaleX(-1);
+    }
+
     /* --- Intake form modals --- */
     .intake-modal {
       display: none;
@@ -601,7 +621,7 @@
 
   <div class="m-banner m-banner--gradient"><span class="m-highlight">Six Systems.</span> One Coordinated Plan Bock.</div>
 
-  <section class="m-section m-section--dark">
+  <section id="offer" class="m-section m-section--dark">
     <img class="m-offer-img" src="assets/home/3-2.png" alt="Comprehensive care">
     <p class="m-title m-title--gold" style="font-size: 48px;">WHAT WE OFFER</p>
     <p class="m-title m-title--white" style="font-size: 48px;">COMPREHENSIVE CARE.</p>
@@ -622,7 +642,7 @@
     </div>
   </section>
 
-  <section class="m-section m-section--gold">
+  <section id="science" class="m-section m-section--gold">
     <p class="m-heading" style="color: white;">ROOTED IN SCIENCE. FOCUSED ON YOU.</p>
     <div class="m-trust">
       <div class="m-trust-item"><img src="assets/provider.png" alt=""><span>PROVIDER GUIDED CARE</span></div>
@@ -750,17 +770,17 @@
     <p style="font-family: Montserrat; font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 12px;">2-minute application. Provider-guided from day one.</p>
   </section>
 
-  <footer class="m-footer">
+  <footer id="footer" class="m-footer">
     <img class="m-footer__logo" src="assets/home/screenshot-743-1.png" alt="EVOLION">
     <p class="m-footer__brand">E V O L I O N</p>
     <p class="m-footer__tagline">GENERATIONAL HEALTH</p>
     <div class="m-footer__nav">
       <button type="button" class="scroll-link" data-scroll-target="plans">MEMBERSHIPS</button>
-      <button type="button" class="scroll-link" data-scroll-target="benefits">PEPTIDES</button>
+      <button type="button" class="scroll-link" data-scroll-target="offer">PEPTIDES</button>
       <button type="button" class="scroll-link" data-scroll-target="how-it-works">HOW IT WORKS</button>
       <button type="button" class="scroll-link" data-scroll-target="home">ABOUT</button>
-      <button type="button" class="scroll-link" data-scroll-target="benefits">RESOURCES</button>
-      <button type="button" class="scroll-link" data-scroll-target="contact">CONTACT</button>
+      <button type="button" class="scroll-link" data-scroll-target="science">RESOURCES</button>
+      <button type="button" class="scroll-link" data-scroll-target="footer">CONTACT</button>
     </div>
     <div class="footer-social m-footer__social">
       <img class="footer-social__img" src="assets/social media.png" alt="">
@@ -826,6 +846,7 @@
     <div class="label">RESULTS<br>YOU CAN MEASURE</div>
   </div>
   <div data-section="benefits" class="section-anchor" style="top: 1403px;"></div>
+  <div data-section="offer" class="section-anchor" style="top: 1829px;"></div>
   <!-- ====== SECTION 2: HEALTH PILLARS — "We Optimize Every System" ====== -->
 <div data-layer="Rectangle 10" class="Rectangle10" style="width: 1440px; height: 347px; left: 0px; top: 1403px; position: absolute; background: #F4F4F2; box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25) inset"></div>
   <div data-layer="YOUR BLUEPRINT FOR A BETTER BODY." class="YourBlueprintForABetterBody" style="left: 533px; top: 1430px; position: absolute; text-align: center; color: #A9824B; font-size: 18px; font-family: Montserrat; font-weight: 700; word-wrap: break-word">YOUR BLUEPRINT FOR A BETTER BODY.</div>
@@ -1052,6 +1073,7 @@
   <div data-layer="START TODAY" class="StartToday" style="left: 1170px; top: 2746px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 600; word-wrap: break-word">START TODAY</div>
   <div data-layer="This is what your future protocol is built from. Exclusive Access members will be the first to lock in founder member pricing, before launch. " class="ThisIsWhatYourFutureProtocolIsBuiltFromEarlyAccessMembersWillBeTheFirstToUnlockItAndTheFirstToLockInFoundingMemberStatusBeforeLaunch" style="width: 1009px; height: 72px; left: 101px; top: 2729px; position: absolute; color: #2B2A28; font-size: 24px; font-family: Inter; font-weight: 500; word-wrap: break-word">This is what your future protocol is built from. Exclusive Access members will be the first to lock in founder member pricing, before launch. </div>
   <div data-section="plans" class="section-anchor" style="top: 3056px;"></div>
+  <div data-section="science" class="section-anchor" style="top: 2817px;"></div>
   <!-- ====== SECTION 4: MEMBERSHIPS — "Tailored Optimization" ====== -->
 <div data-layer="Rectangle 40" class="Rectangle40" style="width: 1440px; height: 920px; left: 0px; top: 2971px; position: absolute; background: linear-gradient(182deg, #050505 36%, #6B6B6B 89%)"></div>
   <div data-layer="TAILORED OPTIMIZATION." class="TailoredOptimization" style="left: 102px; top: 3056px; position: absolute; color: #C8A96A; font-size: 20px; font-family: Inter; font-weight: 600; word-wrap: break-word">TAILORED OPTIMIZATION.</div>
@@ -1061,7 +1083,7 @@
   <div data-layer="A full team of experts, a custom protocol, and ongoing optimization — for less than most people spend on coffee and takeout each month." class="AFullTeamOfExpertsACustomProtocolAndOngoingOptimizationForLessThanMostPeopleSpendOnCoffeeAndTakeoutEachMonth" style="width: 504px; left: 733px; top: 3137px; position: absolute; color: white; font-size: 18px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">A full team of experts, a custom protocol, and ongoing optimization — for less than most people spend on coffee and takeout each month.</div>
   <div data-layer="Rectangle 41" class="Rectangle41" style="width: 605px; height: 514px; left: 101px; top: 3241px; position: absolute; background: linear-gradient(128deg, #16212C 21%, #496E92 100%); border-radius: 10px"></div>
   <div data-layer="Reclaim your edge, boost energy, build lean muscle, reignite your drive and perform at the level you’ve been missing." class="ReclaimYourEdgeOptimizeTestosteroneBoostEnergyBuildLeanMuscleReigniteYourDriveAndPerformAtTheLevelYouVeBeenMissing" style="width: 310px; height: 105px; left: 126px; top: 3336px; position: absolute; color: white; font-size: 16px; font-family: Montserrat; font-weight: 400; word-wrap: break-word">Reclaim your edge, boost energy, build lean muscle, reignite your drive and perform at the level you’ve been missing.</div>
-  <img data-layer="B 2" class="B2" style="width: 258px; height: 541px; left: 448px; top: 3222px; position: absolute" src="assets/home/b-2.png" />
+  <img data-layer="B 2" class="B2 plan-card-photo plan-card-photo--male" src="assets/home/b-2.png" alt="">
   <div data-layer="Rectangle 43" class="Rectangle43" style="width: 605px; height: 74px; left: 101px; top: 3681px; position: absolute; background: rgba(8, 7, 5, 0.50); border-bottom-right-radius: 10px; border-bottom-left-radius: 10px"></div>
   <div data-layer="MALE OPTIMIZATION" class="MaleWellnessOptimization" style="left: 126px; top: 3258px; position: absolute; color: white; font-size: 28px; font-family: Inter; font-weight: 600; word-wrap: break-word">MALE <br/>OPTIMIZATION</div>
   <div data-layer="Dedicated provider oversight" class="DedicatedProviderOversight" style="left: 156px; top: 3456px; position: absolute; color: white; font-size: 14px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">Dedicated provider oversight</div>
@@ -1112,7 +1134,7 @@
   <div data-layer="SIGN UP HERE" class="SignUpHere intake-trigger" data-intake-form="male" style="left: 524px; top: 3706px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">SIGN UP HERE</div>
   <div data-layer="Rectangle 42" class="Rectangle42" style="width: 605px; height: 514px; left: 733px; top: 3241px; position: absolute; background: linear-gradient(139deg, #221924 0%, #82608A 100%); border-radius: 10px"></div>
   <div data-layer="Feel like you again, lift your mood, restore your energy, and improve how you show up every single day." class="FeelLikeYouAgainBalanceYourHormonesLiftYourMoodRestoreYourEnergySupportYourMetabolismAndElevateHowYouFeelEverySingleDay" style="width: 310px; height: 105px; left: 758px; top: 3336px; position: absolute; color: white; font-size: 16px; font-family: Montserrat; font-weight: 400; word-wrap: break-word">Feel like you again, lift your mood, restore your energy, and improve how you show up every single day.</div>
-  <img data-layer="G2 1" class="G21" style="width: 239px; height: 535px; left: 1099px; top: 3220px; position: absolute;" src="assets/home/g2-1.png" />
+  <img data-layer="G2 1" class="G21 plan-card-photo plan-card-photo--female" src="assets/home/g2-1.png" alt="">
   <div data-layer="Rectangle 47" class="Rectangle47" style="width: 605px; height: 74px; left: 733px; top: 3681px; position: absolute; background: rgba(8, 7, 5, 0.50); border-bottom-right-radius: 10px; border-bottom-left-radius: 10px"></div>
   <div data-layer="FEMALE OPTIMIZATION" class="FemaleWellnessOptimization" style="left: 758px; top: 3258px; position: absolute; color: white; font-size: 28px; font-family: Inter; font-weight: 600; word-wrap: break-word">FEMALE <br/>OPTIMIZATION</div>
   <div data-layer="Dedicated provider oversight" class="DedicatedProviderOversight" style="left: 788px; top: 3456px; position: absolute; color: white; font-size: 14px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">Dedicated provider oversight</div>
@@ -1211,6 +1233,7 @@
   <div data-layer="Rectangle 8" class="Rectangle8" style="width: 279px; height: 51px; left: 872px; top: 4957px; position: absolute; border-radius: 3px; border: 2px #C8A96A solid"></div>
   <div data-layer="JOIN THE EARLY-ACCESS LIST →" class="JoinTheEarlyAccessList" style="left: 894px; top: 4971px; position: absolute; color: white; font-size: 15px; font-family: Poppins; font-weight: 600; word-wrap: break-word">JOIN THE EARLY-ACCESS LIST →</div>
   <div data-section="contact" class="section-anchor" style="top: 5114px;"></div>
+  <div data-section="footer" class="section-anchor" style="top: 5475px;"></div>
   <!-- ====== SECTION 7: FINAL CTA — "Your Health Is Your Greatest Asset" ====== -->
 <div data-layer="Rectangle 55" class="Rectangle55" style="width: 1440px; height: 333px; left: 0px; top: 5114px; position: absolute; background: linear-gradient(180deg, #050505 0%, #6B6B6B 100%)"></div>
   <img data-layer="3 2" class="2" style="width: 205px; height: 275px; left: 152px; top: 5146px; position: absolute" src="assets/home/3-2-2.png" />
@@ -1483,11 +1506,19 @@
     'JOIN THE EARLY-ACCESS LIST →': 'plans',
     'SIGN UP NOW': 'plans',
     'MEMBERSHIPS': 'plans',
-    'PEPTIDES': 'benefits',
+    'PEPTIDES': 'offer',
     'ABOUT': 'home',
-    'RESOURCES': 'benefits',
+    'RESOURCES': 'science',
     'E V O L I O N': 'home'
   };
+
+  var FOOTER_NAV_TOP_MIN = 5400;
+
+  function resolveLayerTarget(el, layer) {
+    var top = parseInt(el.style.top, 10);
+    if (layer === 'CONTACT' && !isNaN(top) && top >= FOOTER_NAV_TOP_MIN) return 'footer';
+    return layerTargets[layer];
+  }
 
   var buttonRects = [
     { cls: 'Rectangle6', top: 19, target: 'plans' },
@@ -1526,7 +1557,17 @@
     var anchor = getScrollTarget(id);
     if (!anchor) return;
     var y = anchor.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
-    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    y = Math.max(0, y);
+
+    if ((id === 'home' || id === 'footer') && Math.abs(window.pageYOffset - y) < 48) {
+      window.scrollTo({ top: Math.min(y + 100, document.documentElement.scrollHeight), behavior: 'auto' });
+      requestAnimationFrame(function () {
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+      return;
+    }
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
   function closeMobileMenu() {
@@ -1614,7 +1655,7 @@
 
   Object.keys(layerTargets).forEach(function (layer) {
     document.querySelectorAll('[data-layer="' + layer + '"]').forEach(function (el) {
-      bindScrollLink(el, layerTargets[layer]);
+      bindScrollLink(el, resolveLayerTarget(el, layer));
     });
   });
 

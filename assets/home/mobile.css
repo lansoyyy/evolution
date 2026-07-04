@@ -397,6 +397,15 @@
     display: block;
   }
 
+  .m-plan-card--male .m-plan-card__img {
+    max-height: 260px;
+    object-position: top center;
+  }
+
+  .m-plan-card--female .m-plan-card__img {
+    transform: scaleX(-1);
+  }
+
   .m-plan-card__body {
     padding: 20px;
   }
