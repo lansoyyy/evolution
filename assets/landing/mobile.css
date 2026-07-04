@@ -85,6 +85,12 @@
 }
 
 @media (max-width: 1024px) {
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   .page-viewport {
     display: none !important;
   }
@@ -100,6 +106,8 @@
     background: black;
     color: white;
     padding-top: calc(60px + env(safe-area-inset-top, 0px));
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   .m-landing {
@@ -110,54 +118,79 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 32px 24px 48px;
+    padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 24px) clamp(32px, 8vw, 48px);
     overflow: hidden;
+  }
+
+  .m-landing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.25) 45%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
   }
 
   .m-landing__bg {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    top: 50%;
+    right: -8%;
+    left: auto;
+    transform: translateY(-50%);
+    width: min(72vw, 340px);
+    height: auto;
+    max-height: min(52vh, 420px);
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
+    object-position: right center;
     opacity: 0.5;
     z-index: 0;
   }
 
   .m-landing__content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
-    max-width: 420px;
+    max-width: min(420px, 100%);
     text-align: center;
+    padding: 0 4px;
   }
 
   .m-landing__logo {
-    width: min(160px, 42vw);
+    width: clamp(72px, 22vw, 120px);
     height: auto;
-    margin: 0 auto 24px;
+    max-height: min(140px, 18vh);
+    object-fit: contain;
+    margin: 0 auto clamp(12px, 3vw, 20px);
     display: block;
   }
 
   .m-landing__brand {
     font-family: Poppins, sans-serif;
-    font-size: clamp(36px, 10vw, 52px);
+    font-size: clamp(28px, 8.5vw, 52px);
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: clamp(0.06em, 2vw, 0.12em);
     margin-bottom: 8px;
+    line-height: 1.1;
   }
 
   .m-landing__tagline-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 28px;
+    gap: clamp(8px, 2vw, 12px);
+    margin-bottom: clamp(20px, 5vw, 28px);
+    flex-wrap: wrap;
   }
 
   .m-landing__tagline-line {
-    width: 28px;
+    width: clamp(20px, 6vw, 28px);
     height: 2px;
     background: var(--gold);
     flex-shrink: 0;
@@ -166,17 +199,19 @@
   .m-landing__tagline {
     color: var(--gold);
     font-family: Montserrat, sans-serif;
-    font-size: clamp(14px, 3.5vw, 18px);
+    font-size: clamp(11px, 3.2vw, 18px);
     font-weight: 500;
     letter-spacing: 0.06em;
+    line-height: 1.3;
   }
 
   .m-landing__title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 14vw, 72px);
-    line-height: 1;
+    font-size: clamp(40px, 12vw, 72px);
+    line-height: 0.95;
     text-shadow: 1px 3px 4px rgba(0, 0, 0, 1);
     margin-bottom: 4px;
+    word-break: break-word;
   }
 
   .m-landing__title--white { color: white; }
@@ -184,26 +219,50 @@
 
   .m-landing__subtitle {
     font-family: Poppins, sans-serif;
-    font-size: clamp(24px, 6vw, 32px);
+    font-size: clamp(20px, 5.5vw, 32px);
     font-weight: 500;
     text-shadow: 1px 3px 4px rgba(0, 0, 0, 1);
-    margin-top: 12px;
-    margin-bottom: 36px;
+    margin-top: clamp(8px, 2vw, 12px);
+    margin-bottom: clamp(24px, 6vw, 36px);
+    line-height: 1.2;
   }
 
   .m-landing__cta {
     display: inline-block;
     width: 100%;
-    max-width: 280px;
+    max-width: min(280px, 100%);
     padding: 14px 24px;
     background: var(--gold-dark);
     border-radius: 3px;
     color: white;
     font-family: Poppins, sans-serif;
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     font-weight: 600;
     text-decoration: none;
     text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .m-landing {
+    justify-content: flex-start;
+    padding-top: 16px;
+  }
+
+  .m-landing__bg {
+    width: min(68vw, 280px);
+    max-height: min(44vh, 340px);
+    right: -12%;
+    opacity: 0.42;
+  }
+
+  .m-landing__logo {
+    width: clamp(64px, 20vw, 96px);
+    max-height: 16vh;
+  }
+
+  .m-landing__title {
+    font-size: clamp(36px, 11vw, 48px);
   }
 }
 
