@@ -118,8 +118,8 @@
   .m-body--left { text-align: left; }
 
   .m-hero {
-    padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 20px) clamp(32px, 6vw, 40px);
-    padding-top: clamp(24px, 6vw, 40px);
+    --m-hero-bg-height: min(calc(100dvh - 60px - env(safe-area-inset-top, 0px)), 680px);
+    padding: clamp(24px, 6vw, 40px) clamp(20px, 5vw, 28px) clamp(32px, 6vw, 40px);
     background: black;
     overflow: hidden;
     min-height: auto;
@@ -131,12 +131,13 @@
     top: 0;
     left: 0;
     right: 0;
-    height: min(42vh, 360px);
+    height: var(--m-hero-bg-height);
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.35) 0%,
-      rgba(0, 0, 0, 0.15) 55%,
-      rgba(0, 0, 0, 0.95) 100%
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.45) 38%,
+      rgba(0, 0, 0, 0.35) 55%,
+      rgba(0, 0, 0, 0.88) 100%
     );
     z-index: 1;
     pointer-events: none;
@@ -146,25 +147,37 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     width: 100%;
-    height: min(42vh, 360px);
-    min-width: 0;
-    min-height: 0;
-    max-width: 100%;
+    height: var(--m-hero-bg-height);
     object-fit: cover;
-    object-position: 78% 12%;
-    transform: none;
-    opacity: 0.38;
+    object-position: center 42%;
+    opacity: 0.85;
     z-index: 0;
   }
 
   .m-hero__content {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: min(520px, 100%);
     margin: 0 auto;
+    text-align: center;
+  }
+
+  .m-hero__content .m-title {
+    width: 100%;
+    align-self: center;
+  }
+
+  .m-hero__content .m-tagline,
+  .m-hero__content .m-subtitle,
+  .m-hero__content .m-kicker,
+  .m-hero__content .m-body {
+    width: 100%;
   }
 
   .m-actions {
