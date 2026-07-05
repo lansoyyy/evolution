@@ -520,11 +520,11 @@
   }
 
   .m-plan-card--male {
-    background: linear-gradient(128deg, #121b24 0%, #16212C 32%, #3d5f7a 100%);
+    background: linear-gradient(128deg, #121b24 0%, #16212C 32%, #1a2430 100%);
   }
 
   .m-plan-card--female {
-    background: linear-gradient(139deg, #1a121c 0%, #221924 32%, #6b4f73 100%);
+    background: linear-gradient(139deg, #1a121c 0%, #221924 32%, #241a26 100%);
   }
 
   .m-plan-card__content {
@@ -550,28 +550,30 @@
     pointer-events: none;
   }
 
-  .m-plan-card__img-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .m-plan-card--male .m-plan-card__img-wrap::after {
-    background: radial-gradient(ellipse 75% 85% at 84% 40%, rgba(73, 110, 146, 0.6) 0%, rgba(73, 110, 146, 0.15) 50%, transparent 72%);
-  }
-
-  .m-plan-card--female .m-plan-card__img-wrap::after {
-    background: radial-gradient(ellipse 75% 85% at 84% 40%, rgba(130, 96, 138, 0.6) 0%, rgba(130, 96, 138, 0.15) 50%, transparent 72%);
-  }
-
   .m-plan-card--male .m-plan-card__img-wrap::before {
-    background: linear-gradient(to right, #121b24 0%, #16212C 26%, rgba(22, 33, 44, 0.92) 38%, rgba(22, 33, 44, 0.55) 50%, rgba(22, 33, 44, 0.18) 62%, transparent 78%);
+    background: linear-gradient(
+      to right,
+      #121b24 0%,
+      #16212C 20%,
+      rgba(22, 33, 44, 0.96) 32%,
+      rgba(22, 33, 44, 0.78) 42%,
+      rgba(22, 33, 44, 0.48) 52%,
+      rgba(22, 33, 44, 0.16) 62%,
+      transparent 78%
+    );
   }
 
   .m-plan-card--female .m-plan-card__img-wrap::before {
-    background: linear-gradient(to right, #1a121c 0%, #221924 26%, rgba(34, 25, 36, 0.92) 38%, rgba(34, 25, 36, 0.55) 50%, rgba(34, 25, 36, 0.18) 62%, transparent 78%);
+    background: linear-gradient(
+      to right,
+      #1a121c 0%,
+      #221924 20%,
+      rgba(34, 25, 36, 0.96) 32%,
+      rgba(34, 25, 36, 0.78) 42%,
+      rgba(34, 25, 36, 0.48) 52%,
+      rgba(34, 25, 36, 0.16) 62%,
+      transparent 78%
+    );
   }
 
   .m-plan-card__img {
@@ -586,6 +588,26 @@
     object-position: 58% bottom;
     display: block;
     z-index: 1;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 6%,
+      rgba(0, 0, 0, 0.35) 14%,
+      rgba(0, 0, 0, 0.58) 22%,
+      rgba(0, 0, 0, 0.8) 30%,
+      #000 40%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 6%,
+      rgba(0, 0, 0, 0.35) 14%,
+      rgba(0, 0, 0, 0.58) 22%,
+      rgba(0, 0, 0, 0.8) 30%,
+      #000 40%,
+      #000 100%
+    );
   }
 
   .m-plan-card--male .m-plan-card__img {
@@ -595,6 +617,26 @@
   .m-plan-card--female .m-plan-card__img {
     transform: scaleX(-1);
     object-position: 46% bottom;
+    -webkit-mask-image: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 6%,
+      rgba(0, 0, 0, 0.35) 14%,
+      rgba(0, 0, 0, 0.58) 22%,
+      rgba(0, 0, 0, 0.8) 30%,
+      #000 40%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 6%,
+      rgba(0, 0, 0, 0.35) 14%,
+      rgba(0, 0, 0, 0.58) 22%,
+      rgba(0, 0, 0, 0.8) 30%,
+      #000 40%,
+      #000 100%
+    );
   }
 
   .m-plan-card__body {
