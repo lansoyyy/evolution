@@ -469,7 +469,7 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: clamp(4px, 1.2vw, 8px);
-    margin-top: 10px;
+    margin-top: clamp(12px, 3vw, 16px);
     width: 100%;
   }
 
@@ -484,7 +484,7 @@
   }
 
   .m-trust-item img {
-    width: clamp(32px, 9vw, 44px);
+    width: clamp(28px, 7.5vw, 38px);
     height: auto;
     margin-bottom: 0;
   }
@@ -507,7 +507,7 @@
     font-size: clamp(15px, 3.8vw, 18px);
     font-weight: 700;
     letter-spacing: 0.04em;
-    margin-bottom: 8px;
+    margin-bottom: clamp(16px, 4vw, 20px);
     line-height: 1.2;
   }
 
@@ -597,13 +597,19 @@
     mask-composite: intersect;
   }
 
-  .m-plan-card--male .m-plan-card__img {
+  .m-plan-card--male .m-plan-card__img-wrap,
+  .m-plan-card--female .m-plan-card__img-wrap {
+    bottom: auto;
+    height: clamp(320px, 78vw, 400px);
+  }
+
+  .m-plan-card--male .m-plan-card__img,
+  .m-plan-card--female .m-plan-card__img {
     object-position: 52% top;
   }
 
   .m-plan-card--female .m-plan-card__img {
     transform: scaleX(-1);
-    object-position: 52% top;
   }
 
   .m-plan-card__body {
