@@ -93,13 +93,26 @@
       -webkit-backdrop-filter: blur(8px);
     }
 
+    .mobile-header-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .mobile-header-logo {
+      width: 36px;
+      height: auto;
+      flex-shrink: 0;
+      display: block;
+    }
+
     .mobile-header-brand {
       color: white;
       font-family: 'Poppins', sans-serif;
       font-size: 20px;
       font-weight: 500;
       letter-spacing: 0.18em;
-      cursor: pointer;
     }
 
     .mobile-header-tagline {
@@ -565,9 +578,12 @@
 </head>
 <body>
 <header class="mobile-header" aria-label="Site header">
-  <div>
-    <div class="mobile-header-brand scroll-link" data-scroll-target="home">E V O L I O N</div>
-    <div class="mobile-header-tagline">GENERATIONAL HEALTH</div>
+  <div class="mobile-header-brand-wrap scroll-link" data-scroll-target="home">
+    <img class="mobile-header-logo" src="assets/home/screenshot-743-1.png" alt="">
+    <div>
+      <div class="mobile-header-brand">E V O L I O N</div>
+      <div class="mobile-header-tagline">GENERATIONAL HEALTH</div>
+    </div>
   </div>
   <button type="button" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
     <span class="material-icons-outlined">menu</span>

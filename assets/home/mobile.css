@@ -473,50 +473,92 @@
   }
 
   .m-plan-card {
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 20px;
     max-width: 100%;
+    min-height: 420px;
   }
 
   .m-plan-card--male {
-    background: linear-gradient(128deg, #16212C 21%, #496E92 100%);
+    background: #16212C;
   }
 
   .m-plan-card--female {
-    background: linear-gradient(139deg, #221924 0%, #82608A 100%);
+    background: #221924;
   }
 
+  /* Model sits on the right and blends into the card — same feel as desktop. */
   .m-plan-card__img-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 68px;
+    width: min(54%, 250px);
+    pointer-events: none;
+    z-index: 0;
     overflow: hidden;
-    width: 100%;
-    height: clamp(180px, 44vw, 240px);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    line-height: 0;
+  }
+
+  .m-plan-card__img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .m-plan-card__img-wrap::after {
+    display: none;
+  }
+
+  .m-plan-card--male .m-plan-card__img-wrap::before {
+    background:
+      linear-gradient(to right, #16212C 0%, rgba(22, 33, 44, 0.55) 14%, transparent 34%),
+      linear-gradient(to bottom, transparent 78%, rgba(22, 33, 44, 0.3) 94%, #16212C 100%);
+  }
+
+  .m-plan-card--female .m-plan-card__img-wrap::before {
+    background:
+      linear-gradient(to right, #221924 0%, rgba(34, 25, 36, 0.55) 14%, transparent 34%),
+      linear-gradient(to bottom, transparent 78%, rgba(34, 25, 36, 0.3) 94%, #221924 100%);
   }
 
   .m-plan-card__img {
-    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
     height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: bottom center;
+    object-fit: cover;
+    object-position: top center;
     display: block;
+    -webkit-mask-image:
+      linear-gradient(to left, #000 68%, transparent 100%),
+      linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
+    mask-image:
+      linear-gradient(to left, #000 68%, transparent 100%),
+      linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
   }
 
   .m-plan-card--male .m-plan-card__img {
-    object-position: bottom center;
+    object-position: 55% top;
   }
 
   .m-plan-card--female .m-plan-card__img {
     transform: scaleX(-1);
-    object-position: bottom center;
+    object-position: 55% top;
   }
 
   .m-plan-card__body {
+    position: relative;
+    z-index: 1;
     padding: 20px;
+    padding-right: 14px;
+    max-width: 66%;
   }
 
   .m-plan-card__title {
@@ -524,6 +566,18 @@
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 12px;
+    position: relative;
+    padding-bottom: 12px;
+  }
+
+  .m-plan-card__title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: min(180px, 80%);
+    height: 2px;
+    background: var(--gold);
   }
 
   .m-plan-card__desc {
@@ -557,6 +611,8 @@
   }
 
   .m-plan-card__footer {
+    position: relative;
+    z-index: 2;
     background: rgba(8, 7, 5, 0.5);
     padding: 16px clamp(12px, 3vw, 20px);
     display: flex;

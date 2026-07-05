@@ -67,6 +67,19 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
+.mobile-header-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-header-logo {
+  width: 36px;
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+}
+
 .mobile-header-brand {
   color: white;
   font-family: Poppins, sans-serif;
