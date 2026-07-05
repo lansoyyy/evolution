@@ -266,6 +266,37 @@
     font-size: 14px;
   }
 
+  .m-banner--light {
+    background: #F4F4F2;
+    color: var(--dark);
+    text-align: left;
+    padding: clamp(20px, 5vw, 28px) clamp(16px, 4vw, 24px);
+  }
+
+  .m-banner--pre-plans {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .m-banner--pre-plans__text {
+    font-family: Inter, sans-serif;
+    font-size: clamp(16px, 4.2vw, 20px);
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--dark);
+    margin: 0;
+    text-align: left;
+  }
+
+  .m-banner--pre-plans__btn {
+    align-self: center;
+    width: auto;
+    min-width: min(200px, 100%);
+    padding: 12px 24px;
+  }
+
   .m-banner--launch-marquee {
     background: #765B34;
     padding: 0;
@@ -357,6 +388,14 @@
     text-align: center;
   }
 
+  .m-card__icon {
+    width: clamp(48px, 14vw, 64px);
+    height: clamp(42px, 12vw, 56px);
+    object-fit: contain;
+    margin: 0 auto 12px;
+    display: block;
+  }
+
   .m-card__title {
     font-family: Poppins, sans-serif;
     font-size: 16px;
@@ -445,7 +484,7 @@
   }
 
   .m-trust-item img {
-    width: clamp(24px, 7vw, 32px);
+    width: clamp(32px, 9vw, 44px);
     height: auto;
     margin-bottom: 0;
   }
@@ -453,7 +492,7 @@
   .m-trust-item span {
     display: block;
     font-family: Montserrat, sans-serif;
-    font-size: clamp(7px, 2vw, 9px);
+    font-size: clamp(8px, 2.2vw, 10px);
     font-weight: 600;
     line-height: 1.15;
     letter-spacing: 0.01em;
@@ -489,13 +528,13 @@
     background: #221924;
   }
 
-  /* Model sits on the right and blends into the card — same feel as desktop. */
+  /* Model on the right — sits on the card, no separate panel background. */
   .m-plan-card__img-wrap {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 68px;
-    width: min(54%, 250px);
+    width: min(58%, 270px);
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
@@ -509,20 +548,33 @@
     pointer-events: none;
   }
 
+  /* Soft brand-color glow behind the figure */
   .m-plan-card__img-wrap::after {
-    display: none;
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .m-plan-card--male .m-plan-card__img-wrap::after {
+    background: radial-gradient(ellipse 90% 80% at 62% 38%, rgba(73, 110, 146, 0.72) 0%, rgba(73, 110, 146, 0.25) 45%, transparent 72%);
+  }
+
+  .m-plan-card--female .m-plan-card__img-wrap::after {
+    background: radial-gradient(ellipse 90% 80% at 62% 38%, rgba(130, 96, 138, 0.72) 0%, rgba(130, 96, 138, 0.25) 45%, transparent 72%);
   }
 
   .m-plan-card--male .m-plan-card__img-wrap::before {
     background:
-      linear-gradient(to right, #16212C 0%, rgba(22, 33, 44, 0.55) 14%, transparent 34%),
-      linear-gradient(to bottom, transparent 78%, rgba(22, 33, 44, 0.3) 94%, #16212C 100%);
+      linear-gradient(to right, #16212C 0%, rgba(22, 33, 44, 0.65) 12%, rgba(22, 33, 44, 0.2) 24%, transparent 38%),
+      linear-gradient(to bottom, transparent 78%, rgba(22, 33, 44, 0.35) 94%, #16212C 100%);
   }
 
   .m-plan-card--female .m-plan-card__img-wrap::before {
     background:
-      linear-gradient(to right, #221924 0%, rgba(34, 25, 36, 0.55) 14%, transparent 34%),
-      linear-gradient(to bottom, transparent 78%, rgba(34, 25, 36, 0.3) 94%, #221924 100%);
+      linear-gradient(to right, #221924 0%, rgba(34, 25, 36, 0.65) 12%, rgba(34, 25, 36, 0.2) 24%, transparent 38%),
+      linear-gradient(to bottom, transparent 78%, rgba(34, 25, 36, 0.35) 94%, #221924 100%);
   }
 
   .m-plan-card__img {
@@ -534,23 +586,24 @@
     object-fit: cover;
     object-position: top center;
     display: block;
+    z-index: 1;
     -webkit-mask-image:
-      linear-gradient(to left, #000 68%, transparent 100%),
-      linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
+      linear-gradient(to left, #000 74%, rgba(0, 0, 0, 0.4) 86%, transparent 100%),
+      linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%);
     mask-image:
-      linear-gradient(to left, #000 68%, transparent 100%),
-      linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
+      linear-gradient(to left, #000 74%, rgba(0, 0, 0, 0.4) 86%, transparent 100%),
+      linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%);
     -webkit-mask-composite: source-in;
     mask-composite: intersect;
   }
 
   .m-plan-card--male .m-plan-card__img {
-    object-position: 55% top;
+    object-position: 52% top;
   }
 
   .m-plan-card--female .m-plan-card__img {
     transform: scaleX(-1);
-    object-position: 55% top;
+    object-position: 52% top;
   }
 
   .m-plan-card__body {
@@ -608,6 +661,17 @@
     left: 0;
     color: var(--gold);
     font-weight: 700;
+  }
+
+  .m-plan-card__gold {
+    color: var(--gold);
+  }
+
+  .m-body--gold {
+    color: var(--gold);
+    font-weight: 700;
+    font-family: Inter, sans-serif;
+    font-size: clamp(16px, 4vw, 18px);
   }
 
   .m-plan-card__footer {
