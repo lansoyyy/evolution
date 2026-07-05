@@ -577,26 +577,24 @@
   .m-plan-card__img {
     position: absolute;
     top: 0;
-    right: -10%;
+    right: -5%;
     left: auto;
     width: 66%;
     height: 100%;
     max-width: none;
     object-fit: cover;
-    object-position: 62% top;
+    object-position: 58% bottom;
     display: block;
     z-index: 1;
   }
 
   .m-plan-card--male .m-plan-card__img {
-    right: -10%;
-    width: 66%;
-    object-position: 42% top;
+    object-position: 50% bottom;
   }
 
   .m-plan-card--female .m-plan-card__img {
     transform: scaleX(-1);
-    object-position: 38% top;
+    object-position: 46% bottom;
   }
 
   .m-plan-card__body {
