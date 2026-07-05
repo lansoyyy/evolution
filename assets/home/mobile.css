@@ -517,24 +517,26 @@
     overflow: hidden;
     margin-bottom: 20px;
     max-width: 100%;
-    min-height: 420px;
   }
 
   .m-plan-card--male {
-    background: #16212C;
+    background: linear-gradient(128deg, #121b24 0%, #16212C 32%, #3d5f7a 100%);
   }
 
   .m-plan-card--female {
-    background: #221924;
+    background: linear-gradient(139deg, #1a121c 0%, #221924 32%, #6b4f73 100%);
   }
 
-  /* Model on the right — sits on the card, no separate panel background. */
+  .m-plan-card__content {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Photo layer — contained above the footer only. */
   .m-plan-card__img-wrap {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 68px;
-    width: min(58%, 270px);
+    inset: 0;
+    width: 100%;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
@@ -548,7 +550,6 @@
     pointer-events: none;
   }
 
-  /* Soft brand-color glow behind the figure */
   .m-plan-card__img-wrap::after {
     content: '';
     position: absolute;
@@ -558,66 +559,53 @@
   }
 
   .m-plan-card--male .m-plan-card__img-wrap::after {
-    background: radial-gradient(ellipse 90% 80% at 62% 38%, rgba(73, 110, 146, 0.72) 0%, rgba(73, 110, 146, 0.25) 45%, transparent 72%);
+    background: radial-gradient(ellipse 75% 85% at 84% 40%, rgba(73, 110, 146, 0.6) 0%, rgba(73, 110, 146, 0.15) 50%, transparent 72%);
   }
 
   .m-plan-card--female .m-plan-card__img-wrap::after {
-    background: radial-gradient(ellipse 90% 80% at 62% 38%, rgba(130, 96, 138, 0.72) 0%, rgba(130, 96, 138, 0.25) 45%, transparent 72%);
+    background: radial-gradient(ellipse 75% 85% at 84% 40%, rgba(130, 96, 138, 0.6) 0%, rgba(130, 96, 138, 0.15) 50%, transparent 72%);
   }
 
   .m-plan-card--male .m-plan-card__img-wrap::before {
-    background:
-      linear-gradient(to right, #16212C 0%, rgba(22, 33, 44, 0.65) 12%, rgba(22, 33, 44, 0.2) 24%, transparent 38%),
-      linear-gradient(to bottom, transparent 78%, rgba(22, 33, 44, 0.35) 94%, #16212C 100%);
+    background: linear-gradient(to right, #121b24 0%, #16212C 26%, rgba(22, 33, 44, 0.92) 38%, rgba(22, 33, 44, 0.55) 50%, rgba(22, 33, 44, 0.18) 62%, transparent 78%);
   }
 
   .m-plan-card--female .m-plan-card__img-wrap::before {
-    background:
-      linear-gradient(to right, #221924 0%, rgba(34, 25, 36, 0.65) 12%, rgba(34, 25, 36, 0.2) 24%, transparent 38%),
-      linear-gradient(to bottom, transparent 78%, rgba(34, 25, 36, 0.35) 94%, #221924 100%);
+    background: linear-gradient(to right, #1a121c 0%, #221924 26%, rgba(34, 25, 36, 0.92) 38%, rgba(34, 25, 36, 0.55) 50%, rgba(34, 25, 36, 0.18) 62%, transparent 78%);
   }
 
   .m-plan-card__img {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 100%;
+    right: -10%;
+    left: auto;
+    width: 66%;
     height: 100%;
+    max-width: none;
     object-fit: cover;
-    object-position: top center;
+    object-position: 62% top;
     display: block;
     z-index: 1;
-    -webkit-mask-image:
-      linear-gradient(to left, #000 74%, rgba(0, 0, 0, 0.4) 86%, transparent 100%),
-      linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%);
-    mask-image:
-      linear-gradient(to left, #000 74%, rgba(0, 0, 0, 0.4) 86%, transparent 100%),
-      linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-composite: intersect;
   }
 
-  .m-plan-card--male .m-plan-card__img-wrap,
-  .m-plan-card--female .m-plan-card__img-wrap {
-    bottom: auto;
-    height: clamp(320px, 78vw, 400px);
-  }
-
-  .m-plan-card--male .m-plan-card__img,
-  .m-plan-card--female .m-plan-card__img {
-    object-position: 52% top;
+  .m-plan-card--male .m-plan-card__img {
+    right: -10%;
+    width: 66%;
+    object-position: 42% top;
   }
 
   .m-plan-card--female .m-plan-card__img {
     transform: scaleX(-1);
+    object-position: 38% top;
   }
 
   .m-plan-card__body {
     position: relative;
     z-index: 1;
     padding: 20px;
-    padding-right: 14px;
-    max-width: 66%;
+    padding-right: 8px;
+    max-width: 56%;
+    min-height: clamp(400px, 112vw, 446px);
   }
 
   .m-plan-card__title {
@@ -683,28 +671,30 @@
   .m-plan-card__footer {
     position: relative;
     z-index: 2;
-    background: rgba(8, 7, 5, 0.5);
-    padding: 16px clamp(12px, 3vw, 20px);
+    background: rgba(8, 7, 5, 0.95);
+    padding: 14px 20px 16px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
   }
 
   .m-plan-card__label {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(28px, 8vw, 36px);
+    font-size: clamp(32px, 9vw, 40px);
     color: var(--gold);
     line-height: 1;
-    flex: 1 1 auto;
-    min-width: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    width: 100%;
   }
 
   .m-plan-card__footer .m-btn {
-    flex: 0 1 auto;
-    width: auto;
-    min-width: min(160px, 100%);
+    width: 100%;
+    min-width: 0;
+    padding: 12px 20px;
     white-space: nowrap;
   }
 
@@ -908,22 +898,6 @@
 }
 
 @media (max-width: 480px) {
-  .m-plan-card__footer {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-
-  .m-plan-card__label {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-
-  .m-plan-card__footer .m-btn {
-    width: 100%;
-    min-width: 0;
-  }
-
   .m-features {
     gap: 12px;
   }
